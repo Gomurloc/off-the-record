@@ -3,160 +3,208 @@
 <meta name="description" content="OFF THE RECORD. 궤도의 잔해를 건져 팔고, 배를 키워 더 먼 궤도로 나가는 우주 화물 회수 게임. 순천향대학교 메타버스&게임학과 삼유스튜디오.">
 <meta property="og:title" content="OFF THE RECORD · 오프 더 레코드"><meta property="og:description" content="궤도의 잔해를 건져 팔고, 배를 키워 더 먼 궤도로 나가는 우주 화물 회수 게임 — 삼유스튜디오"><meta property="og:image" content="https://gomurloc.github.io/off-the-record/이미지/웹/인트로4.jpg"><meta name="theme-color" content="#06070A">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;600&family=Noto+Sans+KR:wght@700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;600&family=Noto+Sans+KR:wght@700;900&display=swap">
 <style>
-:root{--space:#06070A;--panel:#0D1016;--scrap:#C9D1DC;--ship:#D9A521;--tank:#2E9C97;--alert:#E3232B;--mute:#7A8494;--line:rgba(201,209,220,.18);
-  --logo:'Anton','Oswald','Noto Sans KR',sans-serif;--head:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--body:'IBM Plex Sans KR','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace}
+:root{--bg:#06070A;--panel:#0C0E13;--ink:#E6EAF0;--body:#B7C0CC;--mute:#76808F;--line:rgba(201,209,220,.14);--ship:#D9A521;--tank:#2E9C97;--alert:#E3232B;
+  --t:'Big Shoulders Display','Noto Sans KR',sans-serif;--h:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--b:'IBM Plex Sans KR','Noto Sans KR',sans-serif;--m:'IBM Plex Mono',ui-monospace,monospace}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--space);color:var(--scrap);font-family:var(--body);font-size:17px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--body);font-family:var(--b);font-size:17px;line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
-.wrap{max-width:960px;margin:0 auto;padding:0 16px}
-.lbl{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
-.h{font-family:var(--head);font-weight:900;color:#fff;line-height:1.25;letter-spacing:-.01em}
-h2.h{font-size:clamp(26px,5vw,36px);margin-top:8px}
-.p{max-width:62ch}
-.cap{font-size:15px;color:var(--mute)}
-section{padding:56px 0;border-top:1px solid var(--line)}
-nav{position:sticky;top:0;z-index:5;background:rgba(6,7,10,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:52px;gap:12px}
-nav .brand{font-family:var(--mono);font-size:12px;letter-spacing:.24em;color:var(--ship);text-decoration:none;white-space:nowrap}
-nav ul{list-style:none;display:flex;gap:18px;overflow-x:auto;font-size:14px}
-nav ul a{color:var(--scrap);text-decoration:none;white-space:nowrap}
-/* 히어로: 위 그림 · 아래 검정 */
-.hero .pic{height:min(62vh,640px);overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
-.hero .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-.hero .wrap{padding-top:40px;padding-bottom:48px}
-.logo{font-family:var(--logo);font-weight:400;text-transform:uppercase;font-size:clamp(64px,15vw,150px);line-height:.94;color:#fff;letter-spacing:.01em;
-  -webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><filter id='r'><feTurbulence type='fractalNoise' baseFrequency='.22 .03' numOctaves='3' seed='11'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0.58'/></filter><rect width='420' height='420' filter='url(%23r)'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><filter id='r'><feTurbulence type='fractalNoise' baseFrequency='.22 .03' numOctaves='3' seed='11'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0.58'/></filter><rect width='420' height='420' filter='url(%23r)'/></svg>");-webkit-mask-size:420px 420px;mask-size:420px 420px}
-.hero .one{font-size:clamp(20px,3.6vw,30px);margin-top:26px;max-width:34ch}
-.rule{border:0;border-top:2px solid var(--ship);width:56px;margin-top:16px}
-.hero .notice{color:var(--tank);margin-top:16px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.chip{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--scrap);border:1px solid var(--line);padding:6px 10px}
-/* 동사 셋 */
-.verbs{display:grid;gap:26px;margin-top:26px}
-@media(min-width:680px){.verbs{grid-template-columns:repeat(3,1fr);gap:32px}}
-.verbs .h{font-size:28px;margin-bottom:6px}
-/* 게임 방법 */
-.steps{display:grid;gap:22px;margin-top:26px}
-@media(min-width:680px){.steps{grid-template-columns:1fr 1fr;gap:28px}}
-.step .frame{border:1px solid var(--line);background:#000;aspect-ratio:16/9;overflow:hidden}
-.step .frame img{width:100%;height:100%;object-fit:cover}
-.step .n{display:flex;align-items:baseline;gap:12px;margin-top:12px}
-.step .n .num{font-family:var(--logo);font-size:28px;color:var(--ship);line-height:1}
-.step .h{font-size:22px}
-.step p{font-size:16px;margin-top:4px}
-.rules{margin-top:32px;display:grid;gap:14px;border-top:1px solid var(--line);padding-top:22px}
-@media(min-width:680px){.rules{grid-template-columns:repeat(3,1fr);gap:28px}}
-.rules p{font-size:16px}.rules b{color:#fff;font-weight:600}
-/* 무대 */
-.stage{display:grid;gap:22px;margin-top:22px}
-@media(min-width:760px){.stage{grid-template-columns:1fr 1fr;align-items:start}}
-.stage .frame{border:1px solid var(--line);background:#000;overflow:hidden}
-.stage .frame img{width:100%}
-.aria{font-family:var(--head);font-weight:700;color:#fff;font-size:18px;line-height:1.45;margin-top:18px}
-.sale{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 8px;align-content:center;aspect-ratio:16/9}
-@media(max-width:480px){.step .frame.sale{grid-template-columns:1fr 1fr;aspect-ratio:auto;height:auto;padding:14px 10px;row-gap:16px}.step .frame.sale img{max-height:90px}}
-.sale div{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
-.step .frame.sale img{height:auto;max-height:110px;width:auto;max-width:100%;object-fit:contain}
-.sale b{font-family:var(--head);font-weight:700;font-size:11px;color:#fff;line-height:1.2}
-.sale span{font-family:var(--mono);font-size:10px;color:var(--ship)}
-.sale span.no{color:var(--mute)}
-/* 화면 · 팀 */
-.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
-@media(min-width:680px){.gal{grid-template-columns:repeat(3,1fr)}}
-.gal figure{background:#000;border:1px solid var(--line);overflow:hidden}
-.gal img{width:100%;aspect-ratio:16/9;object-fit:cover}
-.gal figcaption{padding:8px 10px}
-.team{margin-top:40px;border-top:1px solid var(--line);padding-top:36px;display:grid;gap:24px}
-@media(min-width:680px){.team{grid-template-columns:1fr auto;align-items:end}}
-.members{display:flex;flex-wrap:wrap;gap:24px;margin-top:14px}
-.members b{display:block;font-family:var(--head);font-weight:700;font-size:20px;color:#fff}
-.team .school{margin-top:18px}
-footer{padding:36px 0 56px;border-top:1px solid var(--line)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media(max-width:600px){.wrap{padding:0 16px}}
+.lbl{font-family:var(--m);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.lbl.y{color:var(--ship)}
+h2{font-family:var(--h);font-weight:900;font-size:clamp(28px,4vw,40px);line-height:1.2;color:var(--ink);letter-spacing:-.01em;margin-top:10px}
+h3{font-family:var(--h);font-weight:700;font-size:20px;color:var(--ink);line-height:1.3}
+p{max-width:60ch}
+.p{font-size:17px}
+section{padding:96px 0}
+@media(max-width:600px){section{padding:64px 0}}
+.head{display:grid;gap:8px;margin-bottom:40px}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:10;transition:background .3s;background:linear-gradient(rgba(6,7,10,.7),rgba(6,7,10,0))}
+nav.solid{background:rgba(6,7,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .brand{font-family:var(--t);font-weight:900;font-size:22px;letter-spacing:.06em;color:#fff}
+nav ul{list-style:none;display:flex;gap:28px;font-size:14px;color:var(--ink)}
+nav ul a{opacity:.8}nav ul a:hover{opacity:1;color:var(--ship)}
+@media(max-width:600px){nav ul{gap:16px;font-size:13px}nav .brand{font-size:18px;white-space:nowrap}nav ul li:nth-child(4){display:none}}
+/* hero: 타이틀 화면 전면 + 세로 스텐실 제목 */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:28% 40%}
+.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,7,10,.2) 0%,rgba(6,7,10,0) 35%,rgba(6,7,10,.45) 70%,var(--bg) 100%)}
+.hero .title{position:absolute;right:max(24px,6vw);top:96px;bottom:220px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:var(--t);font-weight:900;color:#fff;font-size:clamp(44px,5.2vh,86px);line-height:.92;text-shadow:0 0 40px rgba(0,0,0,.6)}
+.hero .title span{display:block;background:linear-gradient(var(--bg),var(--bg)) 0 55%/100% 3px no-repeat}
+.hero .title i{height:.3em}
+.hero .bottom{position:absolute;left:0;right:0;bottom:0}
+.hero .bottom .wrap{padding-bottom:56px;display:grid;gap:14px}
+.hero .one{font-family:var(--h);font-weight:900;font-size:clamp(22px,3.2vw,34px);line-height:1.35;color:#fff;max-width:20ch}
+.hero .sub{font-size:15px;color:var(--body);max-width:44ch}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{font-family:var(--m);font-size:11px;letter-spacing:.14em;color:var(--ink);border:1px solid rgba(201,209,220,.3);padding:6px 12px;border-radius:2px;background:rgba(6,7,10,.5)}
+@media(max-width:600px){.hero{min-height:600px}.hero .title{top:80px;bottom:250px;font-size:clamp(34px,4.6vh,56px)}.hero .one{max-width:16ch}}
+/* 게임 소개: 동사 셋, 큰 숫자 */
+.three{display:grid;gap:36px}
+@media(min-width:760px){.three{grid-template-columns:repeat(3,1fr);gap:48px}}
+.three .k{font-family:var(--t);font-weight:900;font-size:56px;color:var(--ship);line-height:1;margin-bottom:8px}
+.three h3{font-size:26px;margin-bottom:8px}
+/* 플레이 흐름: 큰 그림 + 글 좌우 교대 */
+.flow{display:grid;gap:64px}
+.step{display:grid;gap:22px;align-items:center}
+@media(min-width:820px){.step{grid-template-columns:1.25fr 1fr;gap:56px}.step.rev .fig{order:2}}
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;aspect-ratio:16/9;position:relative;display:grid;place-items:center}
+.fig img.full{width:100%;height:100%;object-fit:cover}
+.fig .sprite{position:absolute}
+.fig .stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,rgba(201,209,220,.5) 50%,transparent 51%),radial-gradient(1px 1px at 70% 20%,rgba(201,209,220,.4) 50%,transparent 51%),radial-gradient(1.4px 1.4px at 85% 65%,rgba(201,209,220,.5) 50%,transparent 51%),radial-gradient(1px 1px at 40% 80%,rgba(201,209,220,.4) 50%,transparent 51%),radial-gradient(1px 1px at 10% 70%,rgba(201,209,220,.3) 50%,transparent 51%),radial-gradient(1.2px 1.2px at 55% 50%,rgba(201,209,220,.35) 50%,transparent 51%)}
+.step .n{font-family:var(--t);font-weight:900;font-size:44px;color:var(--ship);line-height:1}
+.step h3{font-size:28px;margin:6px 0 10px}
+/* 정산 */
+.sale{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:18px;width:100%;height:100%;align-content:center}
+.sale div{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.sale img{height:auto;max-height:46%;width:auto;max-width:100%;object-fit:contain}
+.sale b{font-family:var(--h);font-weight:700;font-size:13px;color:#fff;line-height:1.2}
+.sale span{font-family:var(--m);font-size:11px;color:var(--ship)}.sale span.no{color:var(--mute)}
+@media(max-width:600px){.sale{grid-template-columns:1fr 1fr;padding:14px;gap:12px}.fig.sq{aspect-ratio:auto;min-height:0}.fig.sq .sale{position:static}}
+/* 선체 3급 */
+.ships{display:flex;align-items:center;justify-content:space-around;gap:12px;padding:8% 6%;width:100%;height:100%}
+.ships img{height:auto;object-fit:contain}
+.ships img:nth-child(1){width:22%}.ships img:nth-child(2){width:32%}.ships img:nth-child(3){width:38%}
+/* 규칙 */
+.rules{margin-top:80px;display:grid;gap:24px;border-top:1px solid var(--line);padding-top:40px}
+@media(min-width:760px){.rules{grid-template-columns:repeat(3,1fr);gap:40px}}
+.rules b{display:block;color:var(--ink);font-family:var(--h);font-weight:700;font-size:18px;margin-bottom:4px}
+.rules p{font-size:15px}
+/* 세계관: 전면 그림 + 글 */
+.world{position:relative;overflow:hidden}
+.world .bg{position:absolute;inset:0}
+.world .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.55}
+.world .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(6,7,10,.85) 45%,rgba(6,7,10,.3) 100%)}
+.world .wrap{position:relative}
+.world .txt{max-width:560px;display:grid;gap:16px}
+.world .aria{font-family:var(--h);font-weight:700;font-size:20px;color:#fff;line-height:1.5;border-left:3px solid var(--tank);padding-left:16px;margin-top:8px}
+.world .notice{font-family:var(--m);font-size:13px;color:var(--tank);letter-spacing:.04em}
+/* 갤러리 */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:760px){.gal{grid-template-columns:repeat(3,1fr)}}
+.gal figure{background:#000;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.gal img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .4s}
+.gal figure:hover img{transform:scale(1.03)}
+.gal figcaption{font-size:13px;color:var(--mute);padding:10px 12px}
+/* 팀 */
+.team{display:grid;gap:40px}
+@media(min-width:760px){.team{grid-template-columns:1fr 1fr;align-items:start}}
+.members{display:grid;gap:14px;margin-top:8px}
+.mem{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+.mem .no{font-family:var(--t);font-weight:900;font-size:26px;color:var(--ship)}
+.mem b{display:block;font-family:var(--h);font-weight:700;font-size:20px;color:#fff}
+.mem span{font-size:14px;color:var(--mute)}
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts dt{font-family:var(--m);font-size:11px;letter-spacing:.16em;color:var(--mute);padding-top:4px}
+.facts dd{color:var(--ink)}
+footer{padding:40px 0 64px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}
+footer .brand{font-family:var(--t);font-weight:900;font-size:22px;color:#fff;letter-spacing:.06em}
 </style></head><body>
-<nav><div class="wrap"><a class="brand" href="#top">OFF THE RECORD</a><ul><li><a href="#what">무엇을 하나</a></li><li><a href="#how">게임 방법</a></li><li><a href="#world">무대</a></li><li><a href="#team">팀</a></li></ul></div></nav>
+<nav id="nav"><div class="wrap"><a class="brand" href="#top">OFF THE RECORD</a><ul><li><a href="#about">소개</a></li><li><a href="#play">플레이</a></li><li><a href="#world">세계관</a></li><li><a href="#gallery">갤러리</a></li><li><a href="#team">팀</a></li></ul></div></nav>
 
 <header class="hero" id="top">
-  <div class="pic"><img src="이미지/웹/인트로4.jpg" alt="노란 회수선이 난파선에서 화물을 건진다" fetchpriority="high"></div>
-  <div class="wrap">
-    <h1 class="logo">Off the<br>Record</h1>
-    <hr class="rule">
-    <div class="lbl" style="margin-top:10px">오프 더 레코드</div>
-    <p class="h one">궤도의 잔해를 건져 팔고, 배를 키워 더 먼 궤도로 나가는 우주 화물 회수 게임</p>
-    <p class="notice">회수 사업부 자동 안내 — 오늘도 안전한 회수 되십시오.</p>
-    <div class="chips"><span class="chip">삼유스튜디오</span><span class="chip">순천향대학교 메타버스&amp;게임학과</span><span class="chip">미래게임잼 최우수상</span><span class="chip">Unity · PC</span></div>
-  </div>
+  <div class="bg"><img src="이미지/웹/타이틀_글자없음.jpg" alt="회색으로 죽은 지구 아래, 아리아가 사람을 안고 서 있다" fetchpriority="high"></div>
+  <div class="title" aria-label="OFF THE RECORD"><span>O</span><span>F</span><span>F</span><i></i><span>T</span><span>H</span><span>E</span><i></i><span>R</span><span>E</span><span>C</span><span>O</span><span>R</span><span>D</span></div>
+  <div class="bottom"><div class="wrap">
+    <span class="lbl y">오프 더 레코드</span>
+    <p class="one">궤도의 잔해를 건져 팔고, 배를 키워 더 먼 궤도로 나가는 우주 화물 회수 게임</p>
+    <p class="sub">익스트랙션 어드벤처 · 탑뷰 · 싱글 플레이 · PC</p>
+    <div class="chips"><span class="chip">삼유스튜디오</span><span class="chip">순천향대학교 메타버스&amp;게임학과</span><span class="chip">미래게임잼 최우수상</span><span class="chip">Unity</span></div>
+  </div></div>
 </header>
 
-<section id="what"><div class="wrap">
-  <span class="lbl">무엇을 하나</span>
-  <div class="verbs">
-    <div><div class="h">건진다</div><p class="p">위성·로켓에 붙어 칸을 열고 화물을 담는다. 열어 봐야 뭔지 안다.</p></div>
-    <div><div class="h">판다</div><p class="p">정거장에 돌아와 화물마다 팔거나, 팔지 않고 락커에 둔다.</p></div>
-    <div><div class="h">키운다</div><p class="p">판 돈으로 배를 바꾼다. 스크랩 드론에서 수거정, 화물선으로. 배가 커질수록 칸이 늘고 더 먼 궤도가 열린다.</p></div>
+<section id="about"><div class="wrap">
+  <div class="head"><span class="lbl">About</span><h2>나가서 건지고, 돌아와서 판다</h2></div>
+  <div class="three">
+    <div><div class="k">01</div><h3>건진다</h3><p class="p">위성·로켓에 붙어 칸을 열고 화물을 담는다. 열어 봐야 뭔지 안다. 고철일 수도, 진짜 커피일 수도, 붉은 장비일 수도.</p></div>
+    <div><div class="k">02</div><h3>판다</h3><p class="p">정거장에 돌아오면 화물마다 팔거나, 팔지 않고 락커에 둔다. 옛 지구의 물건일수록 비싸다.</p></div>
+    <div><div class="k">03</div><h3>키운다</h3><p class="p">판 돈으로 배를 바꾼다. 스크랩 드론에서 수거정, 화물선으로. 배가 커질수록 칸이 늘고 더 먼 궤도가 열린다.</p></div>
   </div>
 </div></section>
 
-<section id="how"><div class="wrap">
-  <span class="lbl">게임 방법</span>
-  <h2 class="h">나가서 건지고, 돌아와서 판다</h2>
-  <div class="steps">
-    <div class="step"><div class="frame"><img src="이미지/웹/장면_출격.jpg" alt="정거장에서 나가는 스크랩 드론" loading="lazy"></div><div class="n"><span class="num">01</span><span class="h">출격</span></div><p>정거장에서 나간다. 마우스 포인터 쪽으로 밀리고, 멀수록 빠르다.</p></div>
-    <div class="step"><div class="frame"><img src="이미지/웹/장면_붙기.jpg" alt="위성 난파선에 붙은 수거정" loading="lazy"></div><div class="n"><span class="num">02</span><span class="h">붙어서 연다</span></div><p>위성·로켓에 붙으면 칸이 열린다. 클릭해서 담는다. 열수록 시끄럽다.</p></div>
-    <div class="step"><div class="frame sale">
-        <div><img src="이미지/아이템/item_coffee.png" alt="" loading="lazy"><b>진짜 원두 커피</b><span>78,000 CR</span></div>
-        <div><img src="이미지/아이템/item_book.png" alt="" loading="lazy"><b>종이책</b><span>90,000 CR</span></div>
-        <div><img src="이미지/아이템/item_cigs.png" alt="" loading="lazy"><b>20세기 담배</b><span>130,000 CR</span></div>
-        <div><img src="이미지/아이템/item_record.png" alt="" loading="lazy"><b>골든 레코드</b><span class="no">정거장 감정 불가</span></div>
-      </div><div class="n"><span class="num">03</span><span class="h">돌아와 판다</span></div><p>정거장에 대면 화물마다 판다. 아니면 락커에 둔다. 옛 지구의 물건일수록 비싸다.</p></div>
-    <div class="step"><div class="frame"><img src="이미지/웹/선체_3급.jpg" alt="스크랩 드론, 수거정, 화물선" loading="lazy" style="object-fit:contain"></div><div class="n"><span class="num">04</span><span class="h">키운다</span></div><p>판 돈으로 배를 바꾼다. 스크랩 드론에서 수거정, 화물선으로. 배가 커질수록 칸이 늘고 더 먼 궤도가 열린다.</p></div>
+<section id="play"><div class="wrap">
+  <div class="head"><span class="lbl">How to play</span><h2>한 바퀴, 2~3분</h2><p class="p">정거장에서 출발해 화물을 싣고 정거장으로 돌아오면 팔린다. 이 한 바퀴를 돌 때마다 배가 조금씩 커진다.</p></div>
+  <div class="flow">
+    <div class="step">
+      <div class="fig"><div class="stars"></div><img class="sprite" src="이미지/웹/정거장.png" alt="정거장" style="left:6%;top:6%;width:44%"><img class="sprite" src="이미지/웹/선체_1.png" alt="스크랩 드론" style="right:10%;top:38%;width:24%;transform:rotate(-12deg)"></div>
+      <div><div class="n">1</div><h3>출격</h3><p class="p">마우스 포인터 쪽으로 배가 움직인다. 포인터가 멀수록 빠르고, 가까이 두면 멈춘다. WASD로도 움직일 수 있다. 돌아올 연료부터 계산한다.</p></div>
+    </div>
+    <div class="step rev">
+      <div class="fig"><div class="stars"></div><img class="sprite" src="이미지/웹/위성.png" alt="위성 난파선" style="left:4%;top:24%;width:50%"><img class="sprite" src="이미지/웹/선체_2.png" alt="수거정" style="right:5%;top:22%;width:44%;transform:rotate(8deg)"></div>
+      <div><div class="n">2</div><h3>붙어서 연다</h3><p class="p">위성이나 로켓 가까이 가면 자동으로 붙고 화물칸이 열린다. 열린 칸을 클릭하면 싣는다. 열수록 시끄러워지고, 소음을 쫓는 스위퍼가 온다.</p></div>
+    </div>
+    <div class="step">
+      <div class="fig sq"><div class="sale">
+        <div><img src="이미지/아이템/item_coffee.png" alt=""><b>진짜 원두 커피</b><span>78,000 CR</span></div>
+        <div><img src="이미지/아이템/item_book.png" alt=""><b>종이책</b><span>90,000 CR</span></div>
+        <div><img src="이미지/아이템/item_cigs.png" alt=""><b>20세기 담배</b><span>130,000 CR</span></div>
+        <div><img src="이미지/아이템/item_record.png" alt=""><b>골든 레코드</b><span class="no">정거장 감정 불가</span></div>
+      </div></div>
+      <div><div class="n">3</div><h3>돌아와 판다</h3><p class="p">정거장에 대면 화물마다 판다. 아니면 락커에 둔다. 연속으로 살아 돌아오면 값을 더 쳐준다.</p></div>
+    </div>
+    <div class="step rev">
+      <div class="fig"><div class="stars"></div><div class="ships"><img src="이미지/웹/선체_1.png" alt="스크랩 드론"><img src="이미지/웹/선체_2.png" alt="수거정"><img src="이미지/웹/선체_3.png" alt="화물선"></div></div>
+      <div><div class="n">4</div><h3>키운다</h3><p class="p">판 돈으로 배를 바꾼다. 스크랩 드론, 수거정, 화물선. 화물선은 차폐가 있어 더 높은 궤도로 갈 수 있고, 거기에 잃어버린 내 배가 있다.</p></div>
+    </div>
   </div>
   <div class="rules">
-    <p><b>연료가 곧 목숨.</b> 움직여도 줄고 부딪히면 샌다. 0이면 견인되고 싣고 있던 화물을 잃는다.</p>
-    <p><b>스위퍼는 소음을 쫓는다.</b> 열수록, 밀수록 시끄럽다. 엔진을 끄면 파편처럼 조용히 흘러간다.</p>
-    <p><b>붉은 칸은 장비.</b> 요격 포탑, 부스터, 택배 상자. 팔지 말고 슬롯에 단다.</p>
+    <div><b>연료가 곧 목숨</b><p>움직여도 줄고 부딪히면 샌다. 0이 되면 견인되고 싣고 있던 화물을 잃는다.</p></div>
+    <div><b>스위퍼는 소음을 쫓는다</b><p>열수록, 밀수록 시끄럽다. 엔진을 끄면 파편처럼 조용히 흘러간다.</p></div>
+    <div><b>붉은 칸은 장비</b><p>요격 포탑, 부스터, 택배 상자. 팔지 말고 슬롯에 단다. SHIFT 부스터, SPACE 택배 상자.</p></div>
   </div>
 </div></section>
 
-<section id="world"><div class="wrap">
-  <span class="lbl">무대</span>
-  <h2 class="h">하늘이 죽고 백 년.<br>잔해가 곧 돈이다.</h2>
-  <div class="stage">
-    <div class="frame"><img src="이미지/웹/인트로5.jpg" alt="복구실, 아리아가 깨운다" loading="lazy"></div>
-    <div>
-      <p class="p">지구는 회색으로 죽었고, 사람은 궤도 정거장에 산다. 궤도를 띠처럼 도는 위성·로켓 잔해가 곧 돈이다. 옛 지구의 물건, 진짜 커피와 종이책과 레코드가 제일 비싸다.</p>
-      <p class="p" style="margin-top:12px">플레이어는 회사에 빚진 회수원, 자산 T-07. 사고가 나면 회사 보험으로 "복구"되고 그 비용은 빚에 붙는다. 헬멧 무전 너머 아리아가 말한다. 잃어버린 배가 더 높은 궤도에 아직 떠 있다고.</p>
+<section id="world" class="world">
+  <div class="bg"><img src="이미지/웹/인트로5.jpg" alt="복구실. 아리아가 배양조 속 사람을 본다"></div>
+  <div class="wrap">
+    <div class="head"><span class="lbl">World</span><h2>하늘이 죽고 백 년.<br>잔해가 곧 돈이다.</h2></div>
+    <div class="txt">
+      <p>지구는 회색으로 죽었고, 사람은 궤도 정거장에 산다. 궤도를 띠처럼 도는 위성·로켓 잔해가 곧 돈이다. 옛 지구의 물건, 진짜 커피와 종이책과 레코드가 제일 비싸다.</p>
+      <p>플레이어는 회사에 빚진 회수원, 자산 T-07. 사고가 나면 회사 보험으로 "복구"되고 그 비용은 빚에 붙는다. 헬멧 무전 너머 담당 관리자 아리아가 말한다. 잃어버린 배가 더 높은 궤도에 아직 떠 있다고.</p>
       <p class="aria">"…프로토콜은 여기까지. 일어나. 네 배는 아직 저 위에 있어."</p>
-      <span class="cap">아리아 · 담당 관리자</span>
+      <span class="notice">회수 사업부 자동 안내 — 오늘도 안전한 회수 되십시오.</span>
     </div>
+  </div>
+</section>
+
+<section id="gallery"><div class="wrap">
+  <div class="head"><span class="lbl">Gallery</span><h2>1980~90년대 셀 애니 느낌의 우주</h2></div>
+  <div class="gal">
+    <figure><img src="이미지/웹/인트로1.jpg" alt="잔해 띠와 죽은 지구"><figcaption>잔해 띠와 죽은 지구</figcaption></figure>
+    <figure><img src="이미지/웹/인트로4.jpg" alt="난파선과 회수선"><figcaption>난파선과 회수선</figcaption></figure>
+    <figure><img src="이미지/웹/인트로2.jpg" alt="골든 레코드"><figcaption>골든 레코드</figcaption></figure>
+    <figure><img src="이미지/웹/인트로3.jpg" alt="스위퍼"><figcaption>스위퍼의 붉은 눈</figcaption></figure>
+    <figure><img src="이미지/웹/플레이_정거장.jpg" alt="정거장 화면"><figcaption>정거장 · 게임 화면</figcaption></figure>
+    <figure><img src="이미지/웹/플레이_오프닝.jpg" alt="아리아의 무전"><figcaption>아리아 · 헬멧 무전</figcaption></figure>
   </div>
 </div></section>
 
 <section id="team"><div class="wrap">
-  <span class="lbl">화면</span>
-  <div class="gal">
-    <figure><img src="이미지/웹/플레이_정거장.jpg" alt="정거장" loading="lazy"><figcaption class="cap">정거장</figcaption></figure>
-    <figure><img src="이미지/웹/플레이_오프닝.jpg" alt="아리아의 무전" loading="lazy"><figcaption class="cap">아리아 · 헬멧 무전</figcaption></figure>
-    <figure><img src="이미지/웹/인트로1.jpg" alt="잔해 띠" loading="lazy"><figcaption class="cap">잔해 띠와 죽은 지구</figcaption></figure>
-    <figure><img src="이미지/웹/인트로2.jpg" alt="골든 레코드" loading="lazy"><figcaption class="cap">골든 레코드</figcaption></figure>
-    <figure><img src="이미지/웹/인트로3.jpg" alt="스위퍼" loading="lazy"><figcaption class="cap">스위퍼</figcaption></figure>
-    <figure><img src="이미지/웹/인트로4.jpg" alt="회수" loading="lazy"><figcaption class="cap">난파선과 회수선</figcaption></figure>
-  </div>
+  <div class="head"><span class="lbl">Team</span><h2>삼유스튜디오</h2><p class="p">순천향대학교 메타버스&amp;게임학과 셋이 만든 팀. 이름에 '유'가 하나씩 있어 삼유. 기획·사운드, 개발, 아트를 한 명씩 맡는다.</p></div>
   <div class="team">
-    <div>
-      <span class="lbl">팀</span>
-      <h2 class="h" style="font-size:32px">삼유스튜디오</h2>
-      <div class="members">
-        <div><b>고유준</b><span class="cap">기획 · 사운드</span></div>
-        <div><b>이유진</b><span class="cap">개발</span></div>
-        <div><b>권유담</b><span class="cap">아트</span></div>
-      </div>
-      <p class="cap school">순천향대학교 메타버스&amp;게임학과 · 미래게임잼 최우수상 · Unity, PC · 지스타 데모 15분</p>
+    <div class="members">
+      <div class="mem"><span class="no">01</span><div><b>고유준</b><span>기획 · 사운드</span></div></div>
+      <div class="mem"><span class="no">02</span><div><b>이유진</b><span>개발</span></div></div>
+      <div class="mem"><span class="no">03</span><div><b>권유담</b><span>아트</span></div></div>
     </div>
+    <dl class="facts">
+      <div><dt>학교</dt><dd>순천향대학교 메타버스&amp;게임학과</dd></div>
+      <div><dt>수상</dt><dd>미래게임잼 최우수상</dd></div>
+      <div><dt>작품</dt><dd>OFF THE RECORD — 오프 더 레코드 (Unity, PC)</dd></div>
+      <div><dt>목표</dt><dd>지스타 데모 15분</dd></div>
+    </dl>
   </div>
 </div></section>
 
-<footer><div class="wrap"><span class="lbl" style="text-transform:none;letter-spacing:.14em">삼유스튜디오 · Samyu Studio · Soonchunhyang Univ. Metaverse &amp; Game</span></div></footer>
+<footer><div class="wrap"><span class="brand">OFF THE RECORD</span><span class="lbl">삼유스튜디오 · Soonchunhyang Univ. Metaverse &amp; Game</span></div></footer>
+<script>const n=document.getElementById('nav');addEventListener('scroll',()=>n.classList.toggle('solid',scrollY>40),{passive:true});</script>
 </body></html>
