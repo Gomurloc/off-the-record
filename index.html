@@ -1,195 +1,387 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>OFF THE RECORD — 삼유스튜디오</title>
-<meta name="description" content="OFF THE RECORD. 궤도의 잔해를 건져 팔고, 배를 키워 더 먼 궤도로 나가는 우주 화물 회수 게임. 순천향대학교 메타버스&게임학과 삼유스튜디오.">
-<meta property="og:title" content="OFF THE RECORD · 오프 더 레코드"><meta property="og:description" content="궤도의 잔해를 건져 팔고, 배를 키워 더 먼 궤도로 나가는 우주 화물 회수 게임 — 삼유스튜디오"><meta property="og:image" content="https://gomurloc.github.io/off-the-record/이미지/웹/인트로4.jpg"><meta name="theme-color" content="#06070A">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;600&family=Noto+Sans+KR:wght@700;900&display=swap">
+<meta name="description" content="OFF THE RECORD. 살아서 돌아와야 내 것이다. 털 땐 숨고 들키면 싸우는 궤도 폐기물 회수 익스트랙션. 순천향대학교 메타버스&게임학과 삼유스튜디오.">
+<meta property="og:title" content="OFF THE RECORD · 오프 더 레코드"><meta property="og:description" content="살아서 돌아와야 내 것이다. 털 땐 숨고 들키면 싸우는 궤도 폐기물 회수 익스트랙션 — 삼유스튜디오"><meta property="og:image" content="https://gomurloc.github.io/off-the-record/이미지/웹/og.jpg"><meta name="theme-color" content="#06070A">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;700&family=Nanum+Gothic+Coding:wght@700&family=Oxanium:wght@500;800&family=VT323&display=swap">
 <style>
-:root{--bg:#06070A;--panel:#0C0E13;--ink:#E6EAF0;--body:#B7C0CC;--mute:#76808F;--line:rgba(201,209,220,.14);--ship:#D9A521;--tank:#2E9C97;--alert:#E3232B;
-  --t:'Big Shoulders Display','Noto Sans KR',sans-serif;--h:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--b:'IBM Plex Sans KR','Noto Sans KR',sans-serif;--m:'IBM Plex Mono',ui-monospace,monospace}
+/* 색: 심우주 검정 바탕. 노랑은 배 그림에만 있다. 붉은 점은 작게. 청록(아리아)과 호박색(회사·후원)은 한 구역에 같이 두지 않는다. */
+:root{--bg:#06070A;--panel:#0B0E15;--panel2:#11151E;--ink:#E6DFC8;--body:#B3B9C3;--mute:#7C8594;--line:rgba(230,223,200,.13);
+  --mint:#7FC3BE;--amber:#D29B36;--red:#E04A38;--stamp:#C73329;--paper:#EFE4C8;--paperink:#151B2C;--acc:var(--mint);
+  --d:'Oxanium','IBM Plex Sans KR',sans-serif;--k:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--m:'IBM Plex Mono',ui-monospace,monospace;--crt:'VT323','Nanum Gothic Coding',ui-monospace,monospace}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--body);font-family:var(--b);font-size:17px;line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--body);font-family:var(--k);font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+@media(min-width:900px){body{font-size:17px}}
 img{display:block;max-width:100%}
+.nb{white-space:nowrap}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-@media(max-width:600px){.wrap{padding:0 16px}}
-.lbl{font-family:var(--m);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
-.lbl.y{color:var(--ship)}
-h2{font-family:var(--h);font-weight:900;font-size:clamp(28px,4vw,40px);line-height:1.2;color:var(--ink);letter-spacing:-.01em;margin-top:10px}
-h3{font-family:var(--h);font-weight:700;font-size:20px;color:var(--ink);line-height:1.3}
-p{max-width:60ch}
-.p{font-size:17px}
-section{padding:96px 0}
-@media(max-width:600px){section{padding:64px 0}}
-.head{display:grid;gap:8px;margin-bottom:40px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media(min-width:700px){.wrap{padding:0 24px}}
+.lbl{font-family:var(--m);font-weight:500;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc)}
+h2{font-family:var(--k);font-weight:700;font-size:clamp(27px,4.2vw,42px);line-height:1.22;color:var(--ink);letter-spacing:-.015em;margin-top:10px;text-wrap:balance}
+h3{font-family:var(--k);font-weight:700;font-size:22px;color:var(--ink);line-height:1.3}
+p{max-width:58ch}
+section{padding:72px 0}
+@media(min-width:900px){section{padding:92px 0}}
+.head{display:grid;gap:10px;margin-bottom:40px}
+.amber{--acc:var(--amber)}
+.say{font-family:var(--crt);font-size:20px;line-height:1.35;color:var(--ink);letter-spacing:.01em}
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:10;transition:background .3s;background:linear-gradient(rgba(6,7,10,.7),rgba(6,7,10,0))}
-nav.solid{background:rgba(6,7,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-nav .brand{font-family:var(--t);font-weight:900;font-size:22px;letter-spacing:.06em;color:#fff}
-nav ul{list-style:none;display:flex;gap:28px;font-size:14px;color:var(--ink)}
-nav ul a{opacity:.8}nav ul a:hover{opacity:1;color:var(--ship)}
-@media(max-width:600px){nav ul{gap:16px;font-size:13px}nav .brand{font-size:18px;white-space:nowrap}nav ul li:nth-child(4){display:none}}
-/* hero: 타이틀 화면 전면 + 세로 스텐실 제목 */
-.hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
-.hero .bg{position:absolute;inset:0}
-.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:28% 40%}
-.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,7,10,.2) 0%,rgba(6,7,10,0) 35%,rgba(6,7,10,.45) 70%,var(--bg) 100%)}
-.hero .title{position:absolute;right:max(24px,6vw);top:96px;bottom:220px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:var(--t);font-weight:900;color:#fff;font-size:clamp(44px,5.2vh,86px);line-height:.92;text-shadow:0 0 40px rgba(0,0,0,.6)}
-.hero .title span{display:block;background:linear-gradient(var(--bg),var(--bg)) 0 55%/100% 3px no-repeat}
-.hero .title i{height:.3em}
-.hero .bottom{position:absolute;left:0;right:0;bottom:0}
-.hero .bottom .wrap{padding-bottom:56px;display:grid;gap:14px}
-.hero .one{font-family:var(--h);font-weight:900;font-size:clamp(22px,3.2vw,34px);line-height:1.35;color:#fff;max-width:20ch}
-.hero .sub{font-size:15px;color:var(--body);max-width:44ch}
-.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.chip{font-family:var(--m);font-size:11px;letter-spacing:.14em;color:var(--ink);border:1px solid rgba(201,209,220,.3);padding:6px 12px;border-radius:2px;background:rgba(6,7,10,.5)}
-@media(max-width:600px){.hero{min-height:600px}.hero .title{top:80px;bottom:250px;font-size:clamp(34px,4.6vh,56px)}.hero .one{max-width:16ch}}
-/* 게임 소개: 동사 셋, 큰 숫자 */
-.three{display:grid;gap:36px}
-@media(min-width:760px){.three{grid-template-columns:repeat(3,1fr);gap:48px}}
-.three .k{font-family:var(--t);font-weight:900;font-size:56px;color:var(--ship);line-height:1;margin-bottom:8px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;transition:background .3s;background:linear-gradient(rgba(6,7,10,.75),rgba(6,7,10,0))}
+nav.solid{background:rgba(6,7,10,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:56px}
+nav .brand{font-family:var(--d);font-weight:800;font-size:14px;letter-spacing:.04em;color:#fff;white-space:nowrap}
+nav .brand b{color:var(--red);font-weight:800}
+nav ul{list-style:none;display:flex;gap:13px;font-size:13px;color:var(--ink);overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+nav ul::-webkit-scrollbar{display:none}
+nav ul a{display:block;padding:8px 0;opacity:.82}nav ul a:hover{opacity:1;color:var(--mint)}
+@media(min-width:900px){nav .wrap{height:64px}nav .brand{font-size:20px;letter-spacing:.05em}nav ul{gap:30px;font-size:14px}}
+/* hero: 휴대폰은 인물 그림 + 따로 얹은 로고, 넓은 화면은 로고가 들어 있는 타이틀 화면 16:9 */
+.hero{position:relative;background:#030406}
+.stage{position:relative}
+.stage picture img{width:100%;height:min(104vw,66vh);object-fit:cover;object-position:50% 18%}
+.stage picture::after{content:"";position:absolute;left:0;right:0;top:0;height:min(104vw,66vh);background:linear-gradient(180deg,rgba(6,7,10,.35) 0,rgba(6,7,10,0) 22%,rgba(6,7,10,0) 58%,#030406 100%)}
+.copy{position:relative;margin-top:-92px;padding:0 16px 8px;display:grid;gap:12px}
+.copy .logo{width:min(80vw,380px);height:auto}
+.copy .kr{font-family:var(--m);font-size:12px;letter-spacing:.3em;color:var(--mute)}
+.copy .one{font-family:var(--k);font-weight:700;font-size:clamp(25px,7vw,34px);line-height:1.3;color:#fff;letter-spacing:-.01em}
+.copy .genre{font-family:var(--m);font-size:12px;letter-spacing:.08em;color:var(--mint)}
+.copy .desc{font-size:15px;color:var(--body);max-width:36ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:16px 16px 28px}
+.chip{font-family:var(--m);font-size:11px;letter-spacing:.1em;color:var(--ink);border:1px solid rgba(230,223,200,.26);padding:6px 11px;border-radius:2px}
+.onair{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0A0B10}
+.onair .wrap{display:flex;align-items:center;gap:14px;min-height:46px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.live{display:inline-flex;align-items:center;gap:7px;font-family:var(--m);font-size:12px;letter-spacing:.16em;color:#fff;white-space:nowrap}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:blink 1.6s steps(2,jump-none) infinite}
+.onair .ch{font-family:var(--m);font-size:12px;letter-spacing:.12em;color:var(--mute);white-space:nowrap}
+.onair .say{flex:1 1 240px}
+@keyframes blink{50%{opacity:.25}}
+@media(max-width:899px) and (max-height:520px){.copy{margin-top:-36px}}
+@media(min-width:900px){
+  .stage{width:min(100%,calc(100vh*16/9));aspect-ratio:16/9;margin:0 auto;overflow:hidden}
+  .stage picture img{position:absolute;inset:0;height:100%;object-position:50% 50%}
+  .stage picture::after{height:auto;inset:0;background:linear-gradient(180deg,rgba(6,7,10,.45) 0,rgba(6,7,10,0) 16%,rgba(6,7,10,0) 84%,#030406 100%),linear-gradient(90deg,#030406 0,rgba(3,4,6,0) 4%,rgba(3,4,6,0) 96%,#030406 100%)}
+  .copy{position:absolute;margin:0;padding:0;left:57.8%;right:5.6%;top:54.5%;gap:.9vw}
+  .copy .logo{display:none}
+  .copy .kr{font-size:clamp(11px,.85vw,14px)}
+  .copy .one{font-size:clamp(22px,2.35vw,44px)}
+  .copy .genre{font-size:clamp(11px,.9vw,15px)}
+  .copy .desc{font-size:clamp(13px,1.15vw,19px);max-width:none;line-height:1.65}
+  .chips{max-width:1120px;margin:0 auto;padding:22px 24px 30px}
+}
+/* 세 줄 요약 */
+.three{display:grid;gap:34px}
+@media(min-width:760px){.three{grid-template-columns:repeat(3,1fr);gap:44px}}
+.three .k{font-family:var(--d);font-weight:800;font-size:52px;color:transparent;-webkit-text-stroke:1.5px var(--mint);line-height:1;margin-bottom:10px}
 .three h3{font-size:26px;margin-bottom:8px}
-/* 플레이 흐름: 큰 그림 + 글 좌우 교대 */
-.flow{display:grid;gap:64px}
-.step{display:grid;gap:22px;align-items:center}
-@media(min-width:820px){.step{grid-template-columns:1.25fr 1fr;gap:56px}.step.rev .fig{order:2}}
-.fig{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;aspect-ratio:16/9;position:relative;display:grid;place-items:center}
-.fig img.full{width:100%;height:100%;object-fit:cover}
-.fig .sprite{position:absolute}
-.fig .stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,rgba(201,209,220,.5) 50%,transparent 51%),radial-gradient(1px 1px at 70% 20%,rgba(201,209,220,.4) 50%,transparent 51%),radial-gradient(1.4px 1.4px at 85% 65%,rgba(201,209,220,.5) 50%,transparent 51%),radial-gradient(1px 1px at 40% 80%,rgba(201,209,220,.4) 50%,transparent 51%),radial-gradient(1px 1px at 10% 70%,rgba(201,209,220,.3) 50%,transparent 51%),radial-gradient(1.2px 1.2px at 55% 50%,rgba(201,209,220,.35) 50%,transparent 51%)}
-.step .n{font-family:var(--t);font-weight:900;font-size:44px;color:var(--ship);line-height:1}
-.step h3{font-size:28px;margin:6px 0 10px}
-/* 정산 */
-.sale{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:18px;width:100%;height:100%;align-content:center}
-.sale div{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
-.sale img{height:auto;max-height:46%;width:auto;max-width:100%;object-fit:contain}
-.sale b{font-family:var(--h);font-weight:700;font-size:13px;color:#fff;line-height:1.2}
-.sale span{font-family:var(--m);font-size:11px;color:var(--ship)}.sale span.no{color:var(--mute)}
-@media(max-width:600px){.sale{grid-template-columns:1fr 1fr;padding:14px;gap:12px}.fig.sq{aspect-ratio:auto;min-height:0}.fig.sq .sale{position:static}}
-/* 선체 3급 */
-.ships{display:flex;align-items:center;justify-content:space-around;gap:12px;padding:8% 6%;width:100%;height:100%}
-.ships img{height:auto;object-fit:contain}
-.ships img:nth-child(1){width:22%}.ships img:nth-child(2){width:32%}.ships img:nth-child(3){width:38%}
-/* 규칙 */
-.rules{margin-top:80px;display:grid;gap:24px;border-top:1px solid var(--line);padding-top:40px}
-@media(min-width:760px){.rules{grid-template-columns:repeat(3,1fr);gap:40px}}
-.rules b{display:block;color:var(--ink);font-family:var(--h);font-weight:700;font-size:18px;margin-bottom:4px}
-.rules p{font-size:15px}
-/* 세계관: 전면 그림 + 글 */
-.world{position:relative;overflow:hidden}
-.world .bg{position:absolute;inset:0}
-.world .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.55}
-.world .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(6,7,10,.85) 45%,rgba(6,7,10,.3) 100%)}
-.world .wrap{position:relative}
-.world .txt{max-width:560px;display:grid;gap:16px}
-.world .aria{font-family:var(--h);font-weight:700;font-size:20px;color:#fff;line-height:1.5;border-left:3px solid var(--tank);padding-left:16px;margin-top:8px}
-.world .notice{font-family:var(--m);font-size:13px;color:var(--tank);letter-spacing:.04em}
-/* 갤러리 */
-.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:760px){.gal{grid-template-columns:repeat(3,1fr)}}
-.gal figure{background:#000;border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.gal img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .4s}
-.gal figure:hover img{transform:scale(1.03)}
-.gal figcaption{font-size:13px;color:var(--mute);padding:10px 12px}
+/* 한 바퀴 */
+.flow{display:grid;gap:56px}
+.step{display:grid;gap:20px;align-items:center}
+@media(min-width:860px){.flow{gap:72px}.step{grid-template-columns:1.2fr 1fr;gap:56px}.step.rev .fig{order:2}}
+.step .n{font-family:var(--d);font-weight:800;font-size:15px;letter-spacing:.2em;color:var(--mint)}
+.step h3{font-size:27px;margin:4px 0 10px}
+.step .say{margin-top:14px;padding-left:14px;border-left:2px solid var(--line)}
+.fig{position:relative;aspect-ratio:16/9;background:#05070B;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.fig img{position:absolute}
+.fig .cover{inset:0;width:100%;height:100%;object-fit:cover}
+.stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,rgba(230,223,200,.55) 50%,transparent 51%),radial-gradient(1px 1px at 70% 20%,rgba(230,223,200,.4) 50%,transparent 51%),radial-gradient(1.4px 1.4px at 85% 62%,rgba(230,223,200,.5) 50%,transparent 51%),radial-gradient(1px 1px at 40% 78%,rgba(230,223,200,.4) 50%,transparent 51%),radial-gradient(1px 1px at 10% 66%,rgba(230,223,200,.3) 50%,transparent 51%),radial-gradient(1.2px 1.2px at 55% 46%,rgba(230,223,200,.35) 50%,transparent 51%),radial-gradient(1px 1px at 33% 12%,rgba(230,223,200,.35) 50%,transparent 51%),radial-gradient(1px 1px at 92% 34%,rgba(230,223,200,.3) 50%,transparent 51%)}
+/* 1 격벽 문 */
+.door .up,.door .lo{inset:0;width:100%;height:100%;transition:transform 1.3s cubic-bezier(.6,0,.2,1) .5s}
+.door .fr{inset:0;width:100%;height:100%}
+.door.in .up{transform:translateY(-44%)}.door.in .lo{transform:translateY(44%)}
+.stamp{display:inline-grid;gap:1px;justify-items:center;margin-top:18px;padding:8px 16px 9px;border:3px solid var(--stamp);outline:1px solid var(--stamp);outline-offset:3px;color:var(--stamp);font-family:var(--k);font-weight:700;line-height:1.25;transform:rotate(-5deg);border-radius:3px;opacity:.92}
+.stamp small{font-family:var(--m);font-size:10px;letter-spacing:.24em}
+.stamp b{font-size:21px;letter-spacing:.14em}
+/* 3 드론 */
+.fig.threat{background:radial-gradient(60% 70% at 50% 52%,rgba(224,74,56,.2),rgba(5,7,11,0) 70%),#05070B}
+.alert{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:18px;max-width:420px}
+.alert div{padding:9px 6px 8px;border-radius:3px;background:var(--panel2);border-top:3px solid #394158;font-size:13px;color:var(--ink);text-align:center;line-height:1.3}
+.alert b{display:block;font-family:var(--d);font-weight:800;font-size:20px}
+.alert div:nth-child(2){border-color:#8C2433}.alert div:nth-child(3){border-color:var(--stamp)}.alert div:nth-child(4){border-color:var(--red);box-shadow:0 -6px 18px -8px var(--red)}
+/* 4 입항 */
+.zone{position:absolute;left:5%;top:4%;height:92%;aspect-ratio:1;border:1px dashed rgba(127,195,190,.45);border-radius:50%}
+.zone img{inset:17%;width:66%;height:66%;object-fit:contain}
+.keyhint{position:absolute;right:5%;bottom:8%;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink);white-space:nowrap;background:rgba(6,7,10,.7);padding:5px 12px 5px 6px;border-radius:4px;border:1px solid var(--line)}
+kbd{font-family:var(--d);font-weight:800;font-size:13px;color:var(--ink);background:var(--panel2);border:1px solid rgba(230,223,200,.3);border-bottom-width:3px;border-radius:5px;padding:3px 9px;min-width:30px;text-align:center;display:inline-block;white-space:nowrap}
+/* 5 창고 서류 */
+.fig.sheet{aspect-ratio:auto;background:var(--paper);color:var(--paperink);border:0;padding:22px 34px 24px;background-image:radial-gradient(circle at 14px 14px,rgba(21,27,44,.22) 3.5px,transparent 4px),radial-gradient(circle at calc(100% - 14px) 14px,rgba(21,27,44,.22) 3.5px,transparent 4px);background-size:100% 28px}
+.sheet .th{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:2px solid var(--paperink);padding-bottom:8px;font-family:var(--m);font-size:11px;letter-spacing:.14em}
+.sheet .th b{font-family:var(--k);font-size:17px;letter-spacing:0}
+.sheet ul{list-style:none}
+.sheet li{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px dashed rgba(21,27,44,.35)}
+.sheet li img{position:static;width:52px;height:52px;object-fit:contain}
+.sheet li b{font-weight:700;font-size:16px;line-height:1.3}
+.sheet li span{font-family:var(--m);font-size:14px;white-space:nowrap}
+.sheet .ft{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;font-size:13px;line-height:1.5}
+.sheet .stamp{margin:0;font-size:12px;padding:5px 10px 6px;mix-blend-mode:multiply;flex:none}
+.sheet .stamp b{font-size:15px}
+/* 번호판 */
+.plate{margin-top:72px;display:grid;gap:26px;align-items:center;padding:30px 22px;border:1px solid var(--line);border-radius:6px;background:linear-gradient(180deg,#0D1017,#080A0F)}
+@media(min-width:860px){.plate{grid-template-columns:auto 1fr;gap:56px;padding:44px 48px}}
+.flap{display:inline-flex;gap:6px;padding:12px;background:#030406;border-radius:6px;border:1px solid #2A303C;justify-self:start}
+.flap span{position:relative;width:.8em;height:1.3em;display:grid;place-items:center;font-family:var(--d);font-weight:800;font-size:clamp(50px,13vw,84px);line-height:1;color:var(--ink);border-radius:4px;background:linear-gradient(#1C212C 0 49%,#05070A 49% 51%,#161A23 51%)}
+.flap .dash{background:none;width:.4em;color:var(--mute)}
+.flap .d i,.flap .d b{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;font-weight:800;border-radius:4px;background:linear-gradient(#1C212C 0 49%,#05070A 49% 51%,#161A23 51%)}
+.flap .d b{transform:scaleY(0);color:#fff}
+.plate.in .d i{animation:fo .22s ease-in 1s forwards}.plate.in .d b{animation:fi .22s ease-out 1.22s forwards}
+@keyframes fo{to{transform:scaleY(0)}}@keyframes fi{to{transform:scaleY(1)}}
+.plate h3{font-size:25px;margin-bottom:8px}
+.plate .say{margin-top:14px;color:var(--mute)}
+/* 조작 */
+.keys{margin-top:64px;border-top:1px solid var(--line);padding-top:36px}
+.keys h3{margin-bottom:18px}
+.keys dl{display:grid;gap:0}
+@media(min-width:760px){.keys dl{grid-template-columns:1fr 1fr;column-gap:48px}}
+.keys dl div{display:grid;grid-template-columns:128px 1fr;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.keys dd{color:var(--ink)}
+/* 생중계 */
+.onscreen{background:linear-gradient(180deg,#0B0A0A,#06070A)}
+.cast{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.cast{grid-template-columns:1fr 1.15fr;gap:64px}}
+.cast .pts{display:grid;gap:22px}
+.cast .pts b{display:block;color:var(--ink);font-size:19px;margin-bottom:2px}
+.tv{background:#2B171D;border-radius:18px;padding:16px;border:1px solid #4A3424;box-shadow:0 0 0 6px #14090C inset}
+.tv .bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.tv .bar span{font-family:var(--crt);font-size:19px;color:var(--ink)}
+.tv .rule{font-size:13px;color:#E9D9B8;margin-bottom:12px;line-height:1.5}
+.dons{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.don{background:linear-gradient(180deg,#E3B458,#C48A2B);color:#1C0D12;border-radius:6px;padding:10px 8px 11px;display:grid;gap:5px;justify-items:center;text-align:center;line-height:1.3}
+.don small{font-family:var(--m);font-size:10px;letter-spacing:.2em}
+.don b{font-size:14px;font-weight:700}
+.don p{font-size:12.5px;min-height:2.6em}
+.don svg{width:26px;height:20px}
+.don i{font-family:var(--d);font-style:normal;font-weight:800;font-size:14px;border-top:1px solid rgba(28,13,18,.4);padding-top:6px;width:100%}
+@media(min-width:520px){.tv{padding:22px}.don{padding:14px 12px}.don b{font-size:16px}.don p{font-size:14px}}
+/* 함선 */
+.tiers{display:grid;gap:28px}
+@media(min-width:900px){.tiers{grid-template-columns:repeat(3,1fr);gap:22px}}
+.tier .fig{margin-bottom:16px}
+.tier .ship{left:50%;top:39%;transform:translate(-50%,-50%);width:46%}
+.tier.t2 .ship{top:50%;width:56%}
+.tier .holo{right:4%;bottom:6%;width:17%;opacity:.95;filter:drop-shadow(0 0 10px rgba(144,255,235,.5))}
+.tier.t2 .fig{box-shadow:inset 0 0 0 1px rgba(144,255,235,.35),inset 0 0 40px rgba(144,255,235,.08)}
+.tier .no{font-family:var(--d);font-weight:800;font-size:13px;letter-spacing:.2em;color:var(--mint)}
+.tier h3{margin:2px 0 8px}
+.tier ul{list-style:none;margin-top:12px;border-top:1px solid var(--line)}
+.tier li{display:grid;grid-template-columns:72px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink)}
+.tier li span{font-family:var(--m);font-size:11px;letter-spacing:.12em;color:var(--mute);padding-top:3px}
+.parts{margin-top:36px;font-size:15px}
+.parts b{color:var(--ink)}
+/* 드론과 보스 */
+.hunt{position:relative;overflow:hidden}
+.hunt .bg{position:absolute;inset:0}
+.hunt .bg img{width:100%;height:100%;object-fit:cover;object-position:62% 50%;opacity:.8}
+.hunt .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0,rgba(6,7,10,.55) 22%,rgba(6,7,10,.8) 60%,var(--bg) 100%)}
+.hunt .wrap{position:relative}
+.hunt{--acc:var(--red)}
+.orders{max-width:440px;border:1px solid var(--line);background:rgba(6,7,10,.72);border-radius:6px;padding:16px 18px 10px;margin-bottom:48px}
+.orders .lbl{color:var(--mute)}
+.orders ol{list-style:none;counter-reset:o;margin-top:8px}
+.orders li{counter-increment:o;display:grid;grid-template-columns:34px 1fr;padding:7px 0;border-top:1px solid var(--line);color:var(--ink);font-size:15.5px}
+.orders li::before{content:counter(o) "/6";font-family:var(--m);font-size:11px;color:var(--mute);padding-top:4px}
+.bosses{display:grid;gap:14px}
+@media(min-width:760px){.bosses{grid-template-columns:repeat(3,1fr)}}
+.boss{border:1px solid var(--line);border-radius:6px;background:rgba(8,10,15,.82);padding:10px 14px;display:grid;grid-template-columns:44% 1fr;gap:14px;align-items:center}
+.boss .fig{aspect-ratio:16/10;border:0;background:radial-gradient(55% 60% at 50% 50%,rgba(224,74,56,.16),transparent 70%)}
+@media(min-width:760px){.boss{display:block;padding:14px 16px 16px}.boss .fig{margin-bottom:10px}}
+.boss .fig img{inset:8%;width:84%;height:84%;object-fit:contain}
+.boss span{font-family:var(--m);font-size:11px;letter-spacing:.14em;color:var(--mute)}
+.boss b{display:block;font-size:20px;color:var(--ink);line-height:1.3}
+.hunt .note{margin-top:22px;font-size:15px}
+/* 세계: 회사 안내 여섯 장 */
+.cards{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin:0 -16px;padding-left:16px;padding-right:16px;scrollbar-width:thin;scrollbar-color:#2A303C transparent}
+.cards figure{scroll-snap-align:center;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#0A0B10;display:grid;grid-template-rows:auto 1fr}
+.cards img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.cards figcaption{padding:12px 14px 16px;display:grid;gap:6px;align-content:start;background:#0A0B10}
+.cards figcaption span{font-family:var(--m);font-size:11px;letter-spacing:.16em;color:var(--amber)}
+.cards figcaption p{font-size:14.5px;color:var(--ink);line-height:1.6}
+@media(min-width:760px){.cards{grid-auto-flow:row;grid-template-columns:repeat(2,1fr);overflow:visible;margin:0;padding:0;gap:16px}}
+@media(min-width:1040px){.cards{grid-template-columns:repeat(3,1fr)}}
+.aria{margin-top:72px;display:grid;gap:26px;align-items:center}
+@media(min-width:760px){.aria{grid-template-columns:300px 1fr;gap:52px}}
+.aria img{width:min(100%,300px);height:auto;border-radius:6px}
+.aria .txt{display:grid;gap:14px}
+.aria .radio{font-family:var(--k);font-weight:700;font-size:21px;line-height:1.5;color:#fff;border-left:3px solid var(--mint);padding-left:16px}
 /* 팀 */
-.team{display:grid;gap:40px}
-@media(min-width:760px){.team{grid-template-columns:1fr 1fr;align-items:start}}
-.members{display:grid;gap:14px;margin-top:8px}
-.mem{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
-.mem .no{font-family:var(--t);font-weight:900;font-size:26px;color:var(--ship)}
-.mem b{display:block;font-family:var(--h);font-weight:700;font-size:20px;color:#fff}
+.team{display:grid;gap:36px}
+@media(min-width:760px){.team{grid-template-columns:1fr 1fr;align-items:start;gap:48px}}
+.members{display:grid;gap:12px}
+.mem{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:15px 18px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+.mem .no{font-family:var(--d);font-weight:800;font-size:24px;color:var(--mute)}
+.mem b{display:block;font-weight:700;font-size:20px;color:#fff;line-height:1.3}
 .mem span{font-size:14px;color:var(--mute)}
-.facts{display:grid;gap:0;border-top:1px solid var(--line)}
-.facts div{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
-.facts dt{font-family:var(--m);font-size:11px;letter-spacing:.16em;color:var(--mute);padding-top:4px}
+.facts{display:grid;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts dt{font-family:var(--m);font-size:11px;letter-spacing:.14em;color:var(--mute);padding-top:4px}
 .facts dd{color:var(--ink)}
-footer{padding:40px 0 64px;border-top:1px solid var(--line)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}
-footer .brand{font-family:var(--t);font-weight:900;font-size:22px;color:#fff;letter-spacing:.06em}
+footer{padding:36px 0 60px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center}
+footer img{width:150px;height:auto}
+footer .lbl{color:var(--mute);letter-spacing:.14em}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.live::before{animation:none}.door .up,.door .lo{transition:none}.plate.in .d i,.plate.in .d b{animation-duration:.01s;animation-delay:0s}}
 </style></head><body>
-<nav id="nav"><div class="wrap"><a class="brand" href="#top">OFF THE RECORD</a><ul><li><a href="#about">소개</a></li><li><a href="#play">플레이</a></li><li><a href="#world">세계관</a></li><li><a href="#gallery">갤러리</a></li><li><a href="#team">팀</a></li></ul></div></nav>
+<nav id="nav"><div class="wrap"><a class="brand" href="#top">OFF THE <b>RECORD</b></a><ul><li><a href="#play">플레이</a></li><li><a href="#live">생중계</a></li><li><a href="#ship">함선</a></li><li><a href="#world">세계</a></li><li><a href="#team">팀</a></li></ul></div></nav>
 
 <header class="hero" id="top">
-  <div class="bg"><img src="이미지/웹/타이틀_글자없음.jpg" alt="회색으로 죽은 지구 아래, 아리아가 사람을 안고 서 있다" fetchpriority="high"></div>
-  <div class="title" aria-label="OFF THE RECORD"><span>O</span><span>F</span><span>F</span><i></i><span>T</span><span>H</span><span>E</span><i></i><span>R</span><span>E</span><span>C</span><span>O</span><span>R</span><span>D</span></div>
-  <div class="bottom"><div class="wrap">
-    <span class="lbl y">오프 더 레코드</span>
-    <p class="one">궤도의 잔해를 건져 팔고, 배를 키워 더 먼 궤도로 나가는 우주 화물 회수 게임</p>
-    <p class="sub">익스트랙션 어드벤처 · 탑뷰 · 싱글 플레이 · PC</p>
-    <div class="chips"><span class="chip">삼유스튜디오</span><span class="chip">순천향대학교 메타버스&amp;게임학과</span><span class="chip">미래게임잼 최우수상</span><span class="chip">Unity</span></div>
-  </div></div>
+  <div class="stage">
+    <picture><source media="(min-width:900px)" srcset="이미지/웹/타이틀_메인.jpg"><img src="이미지/웹/타이틀_인물.jpg" alt="정거장 창가. 흰 우주복을 입은 7호가 서서 밖을 보고, 아리아가 창틀에 앉아 있다. 창밖에는 잔해 띠와 지구." fetchpriority="high"></picture>
+    <div class="copy">
+      <h1><img class="logo" src="이미지/웹/로고.webp" width="760" height="270" alt="OFF THE RECORD"></h1>
+      <span class="kr">오프 더 레코드</span>
+      <p class="one">살아서 돌아와야 내 것이다.</p>
+      <span class="genre">궤도 폐기물 회수 익스트랙션 · 톱뷰 2D · PC</span>
+      <p class="desc">죽은 지구 위 잔해 띠에서 화물을 털어 정거장으로 돌아온다. 털 땐 숨고, 들키면 싸운다. 출격은 전부 생중계된다.</p>
+    </div>
+  </div>
+  <div class="chips"><span class="chip">삼유스튜디오</span><span class="chip">순천향대학교 메타버스&amp;게임학과</span><span class="chip">미래게임잼 최우수상</span><span class="chip">지스타 2026</span></div>
+  <div class="onair"><div class="wrap"><span class="live">LIVE</span><span class="ch">SD 회사 채널</span><span class="say">자산 T-07, 출격을 승인합니다.</span></div></div>
 </header>
 
 <section id="about"><div class="wrap">
-  <div class="head"><span class="lbl">About</span><h2>나가서 건지고, 돌아와서 판다</h2></div>
+  <div class="head"><span class="lbl">한 출격, 두 막</span><h2>털 땐 숨고, 들키면 싸운다</h2></div>
   <div class="three">
-    <div><div class="k">01</div><h3>건진다</h3><p class="p">위성·로켓에 붙어 칸을 열고 화물을 담는다. 열어 봐야 뭔지 안다. 고철일 수도, 진짜 커피일 수도, 붉은 장비일 수도.</p></div>
-    <div><div class="k">02</div><h3>판다</h3><p class="p">정거장에 돌아오면 화물마다 팔거나, 팔지 않고 락커에 둔다. 옛 지구의 물건일수록 비싸다.</p></div>
-    <div><div class="k">03</div><h3>키운다</h3><p class="p">판 돈으로 배를 바꾼다. 스크랩 드론에서 수거정, 화물선으로. 배가 커질수록 칸이 늘고 더 먼 궤도가 열린다.</p></div>
+    <div><div class="k">01</div><h3>턴다</h3><p>드론의 눈을 피해 위성과 로켓 잔해에 붙는다. 칸이 열리면 클릭 한 번에 담는다. 값은 정거장에 돌아가야 안다.</p></div>
+    <div><div class="k">02</div><h3>들킨다</h3><p>드론의 눈이 빨개지면 떼가 둘러싼다. 배가 약할 땐 EMP와 부스터로 빠져나오고, 강해지면 둘러싸여도 싸워 이긴다.</p></div>
+    <div><div class="k">03</div><h3>돌아온다</h3><p>정거장에 입항을 요청하고 승인이 날 때까지 버틴다. 살아서 들어와야 실은 것이 내 것이 된다.</p></div>
   </div>
 </div></section>
 
 <section id="play"><div class="wrap">
-  <div class="head"><span class="lbl">How to play</span><h2>한 바퀴, 2~3분</h2><p class="p">정거장에서 출발해 화물을 싣고 정거장으로 돌아오면 팔린다. 이 한 바퀴를 돌 때마다 배가 조금씩 커진다.</p></div>
+  <div class="head"><span class="lbl">How to play</span><h2>출격에서 격납고까지, 한 바퀴</h2></div>
   <div class="flow">
     <div class="step">
-      <div class="fig"><div class="stars"></div><img class="sprite" src="이미지/웹/정거장.png" alt="정거장" style="left:6%;top:6%;width:44%"><img class="sprite" src="이미지/웹/선체_1.png" alt="스크랩 드론" style="right:10%;top:38%;width:24%;transform:rotate(-12deg)"></div>
-      <div><div class="n">1</div><h3>출격</h3><p class="p">마우스 포인터 쪽으로 배가 움직인다. 포인터가 멀수록 빠르고, 가까이 두면 멈춘다. WASD로도 움직일 수 있다. 돌아올 연료부터 계산한다.</p></div>
+      <div class="fig door" data-rv><div class="stars"></div><img src="이미지/웹/정거장.webp" alt="" loading="lazy" style="left:8%;top:14%;width:26%"><img src="이미지/웹/위성.webp" alt="" loading="lazy" style="right:10%;top:46%;width:30%;transform:rotate(-14deg)"><img class="up" src="이미지/웹/문_위.webp" alt="" loading="lazy"><img class="lo" src="이미지/웹/문_아래.webp" alt="" loading="lazy"><img class="fr" src="이미지/웹/문_틀.webp" alt="격납고 격벽 문이 위아래로 열리고 우주가 보인다" loading="lazy"></div>
+      <div><div class="n">01</div><h3>출격</h3><p>격납고에서 출고 승인 도장을 찍으면 격벽 문이 닫힌다. 회사 방송이 출격을 승인하고, 문을 누르면 우주가 열린다.</p><div class="stamp"><small>회수 사업부</small><b>출고 승인</b></div></div>
     </div>
     <div class="step rev">
-      <div class="fig"><div class="stars"></div><img class="sprite" src="이미지/웹/위성.png" alt="위성 난파선" style="left:4%;top:24%;width:50%"><img class="sprite" src="이미지/웹/선체_2.png" alt="수거정" style="right:5%;top:22%;width:44%;transform:rotate(8deg)"></div>
-      <div><div class="n">2</div><h3>붙어서 연다</h3><p class="p">위성이나 로켓 가까이 가면 자동으로 붙고 화물칸이 열린다. 열린 칸을 클릭하면 싣는다. 열수록 시끄러워지고, 소음을 쫓는 스위퍼가 온다.</p></div>
+      <div class="fig"><div class="stars"></div><img src="이미지/웹/위성.webp" alt="위성 잔해" loading="lazy" style="left:14%;top:22%;width:44%"><img src="이미지/웹/함선_0.webp" alt="0단계 함선" loading="lazy" style="left:54%;top:25%;width:27%"><img class="cover" src="이미지/웹/조종석_0.webp" alt="" loading="lazy"></div>
+      <div><div class="n">02</div><h3>붙어서 턴다</h3><p>마우스를 두는 쪽으로 배가 가고, 멀리 둘수록 빠르다. 잔해에 붙으면 칸이 하나씩 열린다. 위는 난파선 칸, 아래는 내 화물칸이다. 화물칸이 차면 무엇을 버릴지 골라야 한다.</p></div>
     </div>
     <div class="step">
-      <div class="fig sq"><div class="sale">
-        <div><img src="이미지/아이템/item_coffee.png" alt=""><b>진짜 원두 커피</b><span>78,000 CR</span></div>
-        <div><img src="이미지/아이템/item_book.png" alt=""><b>종이책</b><span>90,000 CR</span></div>
-        <div><img src="이미지/아이템/item_cigs.png" alt=""><b>20세기 담배</b><span>130,000 CR</span></div>
-        <div><img src="이미지/아이템/item_record.png" alt=""><b>골든 레코드</b><span class="no">정거장 감정 불가</span></div>
-      </div></div>
-      <div><div class="n">3</div><h3>돌아와 판다</h3><p class="p">정거장에 대면 화물마다 판다. 아니면 락커에 둔다. 연속으로 살아 돌아오면 값을 더 쳐준다.</p></div>
+      <div class="fig threat"><div class="stars"></div><img src="이미지/웹/드론.webp" alt="붉은 눈이 켜진 회수 드론" loading="lazy" style="left:27%;top:9%;width:46%"></div>
+      <div><div class="n">03</div><h3>들키면</h3><p>드론의 눈이 빨개지면 들킨 것이다. 드론은 달려와 들이받는다. 예고를 보고 옆으로 비키면 지나친다. 싸움이 길어질수록 경보가 오른다.</p>
+        <div class="alert"><div><b>0</b>조용</div><div><b>1</b>들킴</div><div><b>2</b>번짐</div><div><b>3</b>둥지</div></div></div>
     </div>
     <div class="step rev">
-      <div class="fig"><div class="stars"></div><div class="ships"><img src="이미지/웹/선체_1.png" alt="스크랩 드론"><img src="이미지/웹/선체_2.png" alt="수거정"><img src="이미지/웹/선체_3.png" alt="화물선"></div></div>
-      <div><div class="n">4</div><h3>키운다</h3><p class="p">판 돈으로 배를 바꾼다. 스크랩 드론, 수거정, 화물선. 화물선은 차폐가 있어 더 높은 궤도로 갈 수 있고, 거기에 잃어버린 내 배가 있다.</p></div>
+      <div class="fig"><div class="stars"></div><div class="zone"><img src="이미지/웹/정거장.webp" alt="정거장" loading="lazy"></div><img src="이미지/웹/함선_1.webp" alt="1단계 함선" loading="lazy" style="right:6%;top:24%;width:30%"><div class="keyhint"><kbd>E</kbd>입항 요청</div></div>
+      <div><div class="n">04</div><h3>입항</h3><p>정거장 가까이에서 E로 입항을 요청한다. 견인 빔 안에서 승인이 날 때까지 버틴다. 그동안에도 드론은 들이받고, 맞으면 대기가 처음부터다. 한 번도 안 들키고 입항하면 화물 감정가가 20% 오른다.</p></div>
+    </div>
+    <div class="step">
+      <div class="fig sheet">
+        <div class="th"><b>창고 · 화물 감정</b><span>SD-7</span></div>
+        <ul>
+          <li><img src="이미지/웹/화물_coffee.webp" alt="" loading="lazy"><b>진짜 원두 커피</b><span>78,000 CR</span></li>
+          <li><img src="이미지/웹/화물_book.webp" alt="" loading="lazy"><b>종이책</b><span>90,000 CR</span></li>
+          <li><img src="이미지/웹/화물_cigs.webp" alt="" loading="lazy"><b>20세기 담배</b><span>130,000 CR</span></li>
+        </ul>
+        <div class="ft"><span>옛 지구의 물건일수록 비싸다.<br>급매는 감정가의 60%.</span><div class="stamp"><small>회수 사업부</small><b>개조 승인</b></div></div>
+      </div>
+      <div><div class="n">05</div><h3>격납고</h3><p>실어 온 화물은 창고에 쌓인다. 창고에서 팔고, 그 돈으로 정비에서 배를 개조한다. 배가 커지면 화물칸이 늘고 더 먼 궤도로 나갈 수 있다.</p></div>
     </div>
   </div>
-  <div class="rules">
-    <div><b>연료가 곧 목숨</b><p>움직여도 줄고 부딪히면 샌다. 0이 되면 견인되고 싣고 있던 화물을 잃는다.</p></div>
-    <div><b>스위퍼는 소음을 쫓는다</b><p>열수록, 밀수록 시끄럽다. 엔진을 끄면 파편처럼 조용히 흘러간다.</p></div>
-    <div><b>붉은 칸은 장비</b><p>요격 포탑, 부스터, 택배 상자. 팔지 말고 슬롯에 단다. SHIFT 부스터, SPACE 택배 상자.</p></div>
+
+  <div class="plate" data-rv>
+    <div class="flap" role="img" aria-label="번호판이 T-07에서 T-08로 넘어간다"><span>T</span><span class="dash">-</span><span>0</span><span class="d"><i>7</i><b>8</b></span></div>
+    <div><h3>터지면 번호가 오른다</h3><p>회사가 새 몸을 찍는다. 7호가 터지면 8호가 깨어난다. 배는 0단계로 돌아가고, 싣고 있던 화물과 후원품을 잃고, 복구 비용은 빚에 붙는다. 연료가 떨어져 견인될 때는 번호는 그대로지만 화물을 잃는다.</p><p class="say">새 몸을 찍었습니다.</p></div>
+  </div>
+
+  <div class="keys">
+    <h3>조작은 마우스와 키 몇 개</h3>
+    <dl>
+      <div><dt><kbd>마우스</kbd></dt><dd>조종. 커서 쪽으로, 멀수록 세게</dd></div>
+      <div><dt><kbd>좌클릭 누르기</kbd></dt><dd>부스터</dd></div>
+      <div><dt><kbd>좌클릭</kbd></dt><dd>열린 칸 담기</dd></div>
+      <div><dt><kbd>우클릭</kbd></dt><dd>EMP 던지기. 던진 자리의 드론이 멈춘다</dd></div>
+      <div><dt><kbd>Space</kbd></dt><dd>스캔. 근처 잔해가 잡힌다</dd></div>
+      <div><dt><kbd>F</kbd></dt><dd>총 안전장치. 켜 두면 알아서 쏜다</dd></div>
+      <div><dt><kbd>E</kbd></dt><dd>입항 요청</dd></div>
+      <div><dt><kbd>M</kbd></dt><dd>지도</dd></div>
+    </dl>
   </div>
 </div></section>
 
-<section id="world" class="world">
-  <div class="bg"><img src="이미지/웹/인트로5.jpg" alt="복구실. 아리아가 배양조 속 사람을 본다"></div>
-  <div class="wrap">
-    <div class="head"><span class="lbl">World</span><h2>하늘이 죽고 백 년.<br>잔해가 곧 돈이다.</h2></div>
-    <div class="txt">
-      <p>지구는 회색으로 죽었고, 사람은 궤도 정거장에 산다. 궤도를 띠처럼 도는 위성·로켓 잔해가 곧 돈이다. 옛 지구의 물건, 진짜 커피와 종이책과 레코드가 제일 비싸다.</p>
-      <p>플레이어는 회사에 빚진 회수원, 자산 T-07. 사고가 나면 회사 보험으로 "복구"되고 그 비용은 빚에 붙는다. 헬멧 무전 너머 담당 관리자 아리아가 말한다. 잃어버린 배가 더 높은 궤도에 아직 떠 있다고.</p>
-      <p class="aria">"…프로토콜은 여기까지. 일어나. 네 배는 아직 저 위에 있어."</p>
-      <span class="notice">회수 사업부 자동 안내 — 오늘도 안전한 회수 되십시오.</span>
+<section id="live" class="onscreen amber"><div class="wrap">
+  <div class="head"><span class="lbl">On air</span><h2>출격은 전부 생중계된다</h2><p>회사 채널이 출격을 내보낸다. 경보가 오르고 드론을 떨굴수록 시청자가 는다. 구경꾼은 터지는 걸 좋아한다.</p></div>
+  <div class="cast">
+    <div class="pts">
+      <div><b>도네 후원 셋 중 하나</b><p>시청자가 문턱을 넘을 때마다 후원 셋이 뜬다. 금액은 가려져 있다. 선물은 하나에만 들어 있고, 메시지 말투가 힌트다. 나머지 둘은 돈만 주지만 금액이 크다.</p></div>
+      <div><b>살아서 입항해야 받는다</b><p>후원금은 입항해야 잔고에 들어온다. 터지거나 견인되면 사라진다.</p></div>
+      <div><b>구독자는 남는다</b><p>최고 시청자의 일부가 구독자로 쌓인다. 터져도 없어지지 않는다.</p></div>
     </div>
+    <div class="tv">
+      <div class="bar"><span class="live">LIVE</span><span>SD 회사 채널</span></div>
+      <p class="rule">하나만 받을 수 있습니다. 후원금은 살아서 입항해야 지급됩니다.</p>
+      <div class="dons">
+        <div class="don"><small>후원</small><b>고철수집가</b><svg viewBox="0 0 26 20" fill="none" stroke="#1C0D12" stroke-width="1.6" aria-hidden="true"><rect x="1" y="1" width="24" height="18" rx="2"/><path d="M1.5 2.5 13 11 24.5 2.5"/></svg><p>오늘도 살아서<br>와라 ㅠㅠ</p><i>??? CR</i></div>
+        <div class="don"><small>후원</small><b>야간근무중</b><svg viewBox="0 0 26 20" fill="none" stroke="#1C0D12" stroke-width="1.6" aria-hidden="true"><rect x="1" y="1" width="24" height="18" rx="2"/><path d="M1.5 2.5 13 11 24.5 2.5"/></svg><p>도망칠 때<br>연막 하나 챙겨</p><i>??? CR</i></div>
+        <div class="don"><small>후원</small><b>구경만함</b><svg viewBox="0 0 26 20" fill="none" stroke="#1C0D12" stroke-width="1.6" aria-hidden="true"><rect x="1" y="1" width="24" height="18" rx="2"/><path d="M1.5 2.5 13 11 24.5 2.5"/></svg><p>방송 켜 놓고<br>자는 중</p><i>??? CR</i></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="ship"><div class="wrap">
+  <div class="head"><span class="lbl">Ships</span><h2>배가 바뀌면 조종석도 바뀐다</h2><p>함선은 세 단계다. 격납고 정비에서 개조하고, 단계마다 화면을 두르는 조종석이 통째로 달라진다.</p></div>
+  <div class="tiers">
+    <div class="tier">
+      <div class="fig"><div class="stars"></div><img class="ship" src="이미지/웹/함선_0.webp" alt="0단계 함선. 찌그러진 달걀 모양 선체에 녹슨 집게 하나" loading="lazy"><img class="cover" src="이미지/웹/조종석_0.webp" alt="" loading="lazy"></div>
+      <span class="no">TIER 0</span><h3>0단계 함선</h3><p>녹슨 CRT 조종석. 브라운관 TV에 아리아가 뜨고, 연료는 바늘로 읽는다. 무기가 없어 숨고 피하는 수밖에 없다.</p>
+      <ul><li><span>화물칸</span>8칸</li><li><span>무기</span>없음</li></ul>
+    </div>
+    <div class="tier">
+      <div class="fig"><div class="stars"></div><img class="ship" src="이미지/웹/함선_1.webp" alt="1단계 함선. 화물 그물과 집게 셋, 엔진 둘" loading="lazy"><img class="cover" src="이미지/웹/조종석_1.webp" alt="" loading="lazy"></div>
+      <span class="no">TIER 1</span><h3>1단계 함선</h3><p>회사 캐노피. 방위 띠와 레이더 스코프가 달린다. 회사 기관총이 지급되어 처음으로 맞서 싸울 수 있다.</p>
+      <ul><li><span>화물칸</span>16칸</li><li><span>파츠</span>2칸</li></ul>
+    </div>
+    <div class="tier t2">
+      <div class="fig"><div class="stars"></div><img class="ship" src="이미지/웹/함선_2.webp" alt="2단계 함선. 크롬 집게와 엔진 셋" loading="lazy"><img class="holo" src="이미지/웹/아리아_홀로.webp" alt="아리아 홀로그램" loading="lazy"></div>
+      <span class="no">TIER 2</span><h3>2단계 함선</h3><p>틀이 없는 홀로 판. 아리아가 홀로그램으로 뜬다. 방사선 차폐가 있어 밴앨런대를 지나 바깥 궤도로 나간다.</p>
+      <ul><li><span>화물칸</span>24칸</li><li><span>파츠</span>3칸</li></ul>
+    </div>
+  </div>
+  <p class="parts"><b>파츠는 넷.</b> 방어막, 요격 포탑, 택배, 부스터. 적 미사일은 요격 포탑만 떨군다. EMP는 다시 차지 않는 소모품이다.</p>
+</div></section>
+
+<section id="threat" class="hunt">
+  <div class="bg"><img src="이미지/웹/세계_3.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="head"><span class="lbl">Threat</span><h2>세 구역, 세 보스</h2><p>궤도는 저궤도, 밴앨런대, 정지궤도로 나뉜다. 구역마다 중간 보스가 하나씩 지킨다.</p></div>
+    <div class="orders"><span class="lbl">관리자 지시</span><ol><li>1단계 함선으로 개조하라</li><li>살아서 돌아오라</li><li>2단계 함선으로 개조하라</li><li>청소부 모선을 격추하라</li><li>드론 모함을 격추하라</li><li>유령 사냥꾼을 격추하라</li></ol></div>
+    <div class="bosses">
+      <div class="boss"><div class="fig"><img src="이미지/웹/보스_청소부.webp" alt="청소부 모선" loading="lazy"></div><div><span>1구역 · 저궤도</span><b>청소부 모선</b></div></div>
+      <div class="boss"><div class="fig"><img src="이미지/웹/보스_모함.webp" alt="드론 모함" loading="lazy"></div><div><span>2구역 · 밴앨런대</span><b>드론 모함</b></div></div>
+      <div class="boss"><div class="fig"><img src="이미지/웹/보스_사냥꾼.webp" alt="유령 사냥꾼" loading="lazy"></div><div><span>3구역 · 정지궤도</span><b>유령 사냥꾼</b></div></div>
+    </div>
+    <p class="note">밴앨런대는 방사선 구역이다. 차폐가 있는 2단계 함선부터 지나갈 수 있다.</p>
   </div>
 </section>
 
-<section id="gallery"><div class="wrap">
-  <div class="head"><span class="lbl">Gallery</span><h2>1980~90년대 셀 애니 느낌의 우주</h2></div>
-  <div class="gal">
-    <figure><img src="이미지/웹/인트로1.jpg" alt="잔해 띠와 죽은 지구"><figcaption>잔해 띠와 죽은 지구</figcaption></figure>
-    <figure><img src="이미지/웹/인트로4.jpg" alt="난파선과 회수선"><figcaption>난파선과 회수선</figcaption></figure>
-    <figure><img src="이미지/웹/인트로2.jpg" alt="골든 레코드"><figcaption>골든 레코드</figcaption></figure>
-    <figure><img src="이미지/웹/인트로3.jpg" alt="스위퍼"><figcaption>스위퍼의 붉은 눈</figcaption></figure>
-    <figure><img src="이미지/웹/플레이_정거장.jpg" alt="정거장 화면"><figcaption>정거장 · 게임 화면</figcaption></figure>
-    <figure><img src="이미지/웹/플레이_오프닝.jpg" alt="아리아의 무전"><figcaption>아리아 · 헬멧 무전</figcaption></figure>
+<section id="world" class="amber"><div class="wrap">
+  <div class="head"><span class="lbl">World</span><h2>회수 사업부 자동 안내</h2><p>게임은 회사의 안내 여섯 장으로 시작한다. 회사는 끝까지 존댓말을 쓴다.</p></div>
+  <div class="cards">
+    <figure><img src="이미지/웹/세계_1.jpg" alt="잔해 띠와 회색으로 죽은 지구" loading="lazy"><figcaption><span>1 / 6</span><p>하늘로 향하는 길은 끊어졌고, 지구는 이미 황폐화 된 지 오래입니다. 이제 궤도에 남겨진 모든 잔해는 회수해야 할 자산일 뿐입니다.</p></figcaption></figure>
+    <figure><img src="이미지/웹/세계_2.jpg" alt="회사 홀의 큰 화면. 기억이 뇌를 거쳐 바코드로 바뀐다" loading="lazy"><figcaption><span>2 / 6</span><p>빚을 진 당신은 기억을 담보로 맡기는 순간, 당사의 자산이 됩니다. 모든 자산은 이름이 아닌 번호로 관리됩니다.</p></figcaption></figure>
+    <figure><img src="이미지/웹/세계_3.jpg" alt="어둠 속 붉은 눈의 드론" loading="lazy"><figcaption><span>3 / 6</span><p>회수 드론은 당사 소속이 아닙니다. 드론은 탐지한 모든 대상을 회수합니다. 예외는 없습니다.</p></figcaption></figure>
+    <figure><img src="이미지/웹/세계_4.jpg" alt="터지는 노란 회수선" loading="lazy"><figcaption><span>4 / 6</span><p>자산이 손실될 경우, 당사에서 신체를 복구해 드립니다. 단, 복구에 소요된 비용은 기존 부채에 합산됩니다.</p></figcaption></figure>
+    <figure><img src="이미지/웹/세계_5.jpg" alt="배양조와 T-07 SUCCESS가 뜬 단말" loading="lazy"><figcaption><span>5 / 6</span><p>자산 번호 <span class="nb">T-07</span>, 여섯 번째 신체 복구가 완료되었습니다.</p></figcaption></figure>
+    <figure><img src="이미지/웹/세계_6.jpg" alt="헤드셋을 쓴 아리아의 옆얼굴" loading="lazy"><figcaption><span>6 / 6</span><p>아리아는 당신에게 배정된 전담 관리자입니다. 관리자의 지시를 따르십시오.</p></figcaption></figure>
+  </div>
+</div>
+<div class="wrap" style="--acc:var(--mint)">
+  <div class="aria">
+    <img src="이미지/웹/아리아.jpg" alt="조종석의 아리아. 청록 머리에 헤드셋, 올리브색 비행복" loading="lazy" width="600" height="600">
+    <div class="txt">
+      <span class="lbl">아리아 · 전담 관리자</span>
+      <p class="radio">"7호, 들려? …들리면 됐어, 대답은 안 해도 돼. 일단 움직여 봐."</p>
+      <p>회사가 존댓말로 안내하는 동안 아리아는 반말로 무전을 친다. 조종도, 드론을 피하는 법도, 화물 고르는 법도 아리아가 무전으로 가르친다.</p>
+      <p>플레이어는 말이 없다. 이름 대신 번호로 불린다. <span class="nb">자산 T-07</span>, 7호.</p>
+    </div>
   </div>
 </div></section>
 
 <section id="team"><div class="wrap">
-  <div class="head"><span class="lbl">Team</span><h2>삼유스튜디오</h2><p class="p">순천향대학교 메타버스&amp;게임학과 셋이 만든 팀. 이름에 '유'가 하나씩 있어 삼유. 기획·사운드, 개발, 아트를 한 명씩 맡는다.</p></div>
+  <div class="head"><span class="lbl">Team</span><h2>삼유스튜디오</h2><p>순천향대학교 메타버스&amp;게임학과 셋이 만든 팀. 이름에 '유'가 하나씩 있어 삼유. 기획·사운드, 개발, 아트를 한 명씩 맡는다.</p></div>
   <div class="team">
     <div class="members">
       <div class="mem"><span class="no">01</span><div><b>고유준</b><span>기획 · 사운드</span></div></div>
@@ -200,11 +392,15 @@ footer .brand{font-family:var(--t);font-weight:900;font-size:22px;color:#fff;let
       <div><dt>학교</dt><dd>순천향대학교 메타버스&amp;게임학과</dd></div>
       <div><dt>수상</dt><dd>미래게임잼 최우수상</dd></div>
       <div><dt>작품</dt><dd>OFF THE RECORD — 오프 더 레코드 (Unity, PC)</dd></div>
-      <div><dt>목표</dt><dd>지스타 데모 15분</dd></div>
+      <div><dt>전시</dt><dd>지스타 2026 · 11월 19~22일 · 부산 벡스코</dd></div>
     </dl>
   </div>
 </div></section>
 
-<footer><div class="wrap"><span class="brand">OFF THE RECORD</span><span class="lbl">삼유스튜디오 · Soonchunhyang Univ. Metaverse &amp; Game</span></div></footer>
-<script>const n=document.getElementById('nav');addEventListener('scroll',()=>n.classList.toggle('solid',scrollY>40),{passive:true});</script>
+<footer><div class="wrap"><img src="이미지/웹/로고.webp" width="760" height="270" alt="OFF THE RECORD" loading="lazy"><span class="lbl">삼유스튜디오 · Soonchunhyang Univ. Metaverse &amp; Game</span></div></footer>
+<script>
+const n=document.getElementById('nav');addEventListener('scroll',()=>n.classList.toggle('solid',scrollY>40),{passive:true});
+const rv=document.querySelectorAll('[data-rv]');
+if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.45});rv.forEach(e=>io.observe(e))}else rv.forEach(e=>e.classList.add('in'));
+</script>
 </body></html>
