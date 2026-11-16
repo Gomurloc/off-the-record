@@ -7,3 +7,4 @@
 - 내용의 기준은 유니티 저장소(`unity-scrap-to-stars`, `claude/demo-sprint` 브랜치)의 `docs/design.md`다. 2026-11-10에 그 판(2026-11-06 기능 동결) 기준으로 다시 만들었다.
 - 그림은 같은 저장소 `Assets/_Game/Art`에서 웹용으로 줄여 `이미지/웹/`에 둔다. `로고.webp`는 `Title/title_main.png`에서 글자만 따낸 것이다.
 - 페이지에 쓰지 않는 것: 테세우스·그놈·레코드의 뜻·주인공 이름 같은 뒷이야기, 옛 이름(이오·스위퍼·DIRTY DUCK).
+- 글꼴은 Pretendard 하나만 쓴다. `fonts/pretendard/`에 웹폰트를 같이 두어 외부 주소 없이 뜬다(SIL OFL 1.1, 고지는 CSS 머리말).
