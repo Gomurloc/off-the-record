@@ -211,8 +211,12 @@ kbd{font-family:inherit;font-weight:600;font-size:13px;color:var(--ink);backgrou
 .what p:first-of-type{color:var(--ink);font-weight:600;font-size:18px}
 @media(min-width:860px){.card{grid-template-columns:auto 1fr;gap:0;align-items:center;margin-bottom:72px}.who{padding-right:72px}.what{border-top:0;border-left:1px solid var(--line);padding:28px 0 28px 72px}}
 .team{display:grid;gap:44px}
-@media(min-width:760px){.team{grid-template-columns:1fr 1fr;align-items:start;gap:56px}}
+@media(min-width:760px){.team{grid-template-columns:1fr 1fr;align-items:start;gap:56px}.team.second{margin-top:64px}}
 .team h3{font-size:17px;font-weight:600;color:var(--mute);margin-bottom:12px}
+.team.second{margin-top:56px}
+.story{display:grid;gap:14px}
+.team .story h3{font-size:24px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.story p{max-width:none}
 .members{display:grid;border-top:1px solid var(--line)}
 .mem{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
 .mem b{font-weight:500;font-size:20px;color:#5A5F67;line-height:1.3}
@@ -225,7 +229,7 @@ kbd{font-family:inherit;font-weight:600;font-size:13px;color:var(--ink);backgrou
 .path time{font-size:15px;color:var(--mute)}
 .path b{display:block;color:var(--ink);font-weight:600;font-size:17px;line-height:1.4}
 .path span{font-size:15px}
-.facts{display:grid;border-top:1px solid var(--line);margin-top:44px}
+.facts{display:grid;border-top:1px solid var(--line)}
 .facts div{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
 .facts dt{font-size:15px;color:var(--mute)}
 .facts dd{color:var(--ink)}
@@ -406,6 +410,24 @@ footer img{width:112px;height:auto}
     </div>
   </div>
   <div class="team">
+    <div class="story">
+      <h3>OFF THE RECORD가 나오기까지</h3>
+      <p>시작은 2026년 9월, 충남콘텐츠진흥원이 연 미래게임잼이었다. 주제는 '미래'. 셋이 미래를 두고 이야기하다가 우주 탐험에 닿았다.</p>
+      <p>배경은 케슬러 증후군에서 가져왔다. 궤도의 잔해가 서로 부딪혀 계속 늘어나는 현상이다. 여기서 주울 것(잔해 속 화물), 위험한 것(충돌), 적(잔해를 치우는 드론)이 한꺼번에 나왔다.</p>
+      <p>게임잼에서는 B급 분위기의 프로토타입이었다. 나가서 줍고 살아 돌아오는 한 바퀴가 재미있다는 걸 거기서 확인했고, 최우수상을 받았다.</p>
+      <p>그 뒤로 세계관과 이야기를 더했다. 빚을 지면 번호로 불리는 회사, 무전 너머의 관리자 아리아, 생중계되는 출격이 붙으면서 OFF THE RECORD가 됐다.</p>
+      <p>11월에는 충청권 인디게임 공모전 인디유에서 대학부문 우수상을 받았고, 지스타 2026에서 시연한다.</p>
+    </div>
+    <div>
+      <h3>걸어온 길</h3>
+      <ol class="path">
+        <li><time>2026. 9</time><div><b>미래게임잼 최우수상</b><span>충남콘텐츠진흥원 주최. 주제는 '미래'.</span></div></li>
+        <li><time>2026. 11</time><div><b>인디유(indie·U) 대학부문 우수상</b><span>2026 충청권 인디게임 공모전</span></div></li>
+        <li><time>2026. 11</time><div><b>지스타 2026 시연</b><span>11월 19~22일, 부산 벡스코</span></div></li>
+      </ol>
+    </div>
+  </div>
+  <div class="team second">
     <div>
       <h3>팀원</h3>
       <div class="members">
@@ -415,19 +437,14 @@ footer img{width:112px;height:auto}
       </div>
     </div>
     <div>
-      <h3>걸어온 길</h3>
-      <ol class="path">
-        <li><time>2026. 9</time><div><b>미래게임잼 최우수상</b><span>이때 만든 프로토타입이 OFF THE RECORD의 출발이다.</span></div></li>
-        <li><time>2026. 11</time><div><b>인디유(indie·U) 대학부문 우수상</b><span>2026 충청권 인디게임 공모전</span></div></li>
-        <li><time>2026. 11</time><div><b>지스타 2026 시연</b><span>11월 19~22일, 부산 벡스코</span></div></li>
-      </ol>
+      <h3>정보</h3>
+      <dl class="facts">
+        <div><dt>학교</dt><dd>순천향대학교 메타버스&amp;게임학과</dd></div>
+        <div><dt>작품</dt><dd>OFF THE RECORD — 오프 더 레코드 (Unity, PC)</dd></div>
+        <div><dt>지원</dt><dd>충남콘텐츠진흥원 · 순천향대학교</dd></div>
+      </dl>
     </div>
   </div>
-  <dl class="facts">
-    <div><dt>학교</dt><dd>순천향대학교 메타버스&amp;게임학과</dd></div>
-    <div><dt>작품</dt><dd>OFF THE RECORD — 오프 더 레코드 (Unity, PC)</dd></div>
-    <div><dt>지원</dt><dd>충남콘텐츠진흥원 · 순천향대학교</dd></div>
-  </dl>
 </div></section>
 
 <footer><div class="wrap"><img src="이미지/웹/3u_studio.svg" width="3545" height="653" alt="3U Studio" loading="lazy"><span>삼유스튜디오 · 순천향대학교 메타버스&amp;게임학과</span></div></footer>
