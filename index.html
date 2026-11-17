@@ -47,6 +47,7 @@ nav ul a{display:block;padding:8px 0;opacity:.82}nav ul a:hover{opacity:1;color:
 .copy .desc{font-size:15px;color:var(--body);max-width:36ch}
 .credit{padding:14px 16px 26px;font-size:14px;line-height:1.65;color:var(--mute);max-width:none;text-wrap:balance}
 .credit b{color:var(--ink);font-weight:600}
+.credit small{display:block;margin-top:6px;font-size:13px}
 .onair{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0A0B10}
 .onair .wrap{display:flex;align-items:center;gap:14px;min-height:46px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
 .live{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap}
@@ -197,14 +198,26 @@ kbd{font-family:inherit;font-weight:600;font-size:13px;color:var(--ink);backgrou
 .aria .txt{display:grid;gap:14px}
 .aria .radio{font-weight:700;font-size:21px;line-height:1.5;letter-spacing:-.015em;color:#fff;border-left:3px solid var(--mint);padding-left:16px}
 /* 팀 */
-.team{display:grid;gap:36px}
-@media(min-width:760px){.team{grid-template-columns:1fr 1fr;align-items:start;gap:48px}}
+.yu{display:flex;flex-wrap:wrap;gap:6px 28px;font-weight:700;font-size:clamp(30px,8.4vw,60px);line-height:1.2;letter-spacing:-.03em;color:#566070;margin-bottom:22px}
+.yu b{color:var(--ink);font-weight:800}
+.about{display:grid;gap:10px;margin-bottom:52px}
+.about p:first-child{color:var(--ink);font-size:19px;font-weight:600}
+.team{display:grid;gap:44px}
+@media(min-width:760px){.team{grid-template-columns:1fr 1fr;align-items:start;gap:56px}}
+.team h3{font-size:17px;font-weight:600;color:var(--mute);margin-bottom:12px}
 .members{display:grid;border-top:1px solid var(--line)}
-.mem{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.mem{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
 .mem b{font-weight:700;font-size:20px;color:#fff;line-height:1.3}
-.mem span{font-size:15px;color:var(--mute)}
-.facts{display:grid;border-top:1px solid var(--line)}
-.facts div{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.mem span{grid-column:1;font-size:15px;color:var(--mute)}
+.mem a{grid-column:2;grid-row:1/3;font-size:15px;font-weight:500;color:var(--ink);text-decoration:underline;text-decoration-color:rgba(230,223,200,.35);text-underline-offset:4px;padding:8px 0;white-space:nowrap}
+.mem a:hover{color:#fff;text-decoration-color:#fff}
+.path{list-style:none;border-top:1px solid var(--line)}
+.path li{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.path time{font-size:15px;color:var(--mute)}
+.path b{display:block;color:var(--ink);font-weight:600;font-size:17px;line-height:1.4}
+.path span{font-size:15px}
+.facts{display:grid;border-top:1px solid var(--line);margin-top:44px}
+.facts div{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
 .facts dt{font-size:15px;color:var(--mute)}
 .facts dd{color:var(--ink)}
 footer{padding:36px 0 60px;border-top:1px solid var(--line)}
@@ -225,7 +238,7 @@ footer .lbl{font-weight:400}
       <p class="desc">죽은 지구 위 잔해 띠에서 화물을 털어 정거장으로 돌아온다. 털 땐 숨고, 들키면 싸운다. 출격은 전부 생중계된다.</p>
     </div>
   </div>
-  <p class="credit"><b>삼유스튜디오</b> · 순천향대학교 메타버스&amp;게임학과 · 미래게임잼 최우수상 · 인디유 우수상 · 지스타 2026</p>
+  <p class="credit"><b>삼유스튜디오</b> · 순천향대학교 메타버스&amp;게임학과 · 미래게임잼 최우수상 · 인디유 우수상 · 지스타 2026<small>지원 충남콘텐츠진흥원 · 순천향대학교</small></p>
   <div class="onair"><div class="wrap"><span class="live">LIVE</span><span class="ch">SD 회사 채널</span><span class="say">자산 T-07, 출격을 승인합니다.</span></div></div>
 </header>
 
@@ -372,20 +385,35 @@ footer .lbl{font-weight:400}
 </div></section>
 
 <section id="team"><div class="wrap">
-  <div class="head"><h2>삼유스튜디오</h2><p>순천향대학교 메타버스&amp;게임학과 셋이 만든 팀. 이름에 '유'가 하나씩 있어 삼유. 기획·사운드, 개발, 아트를 한 명씩 맡는다.</p></div>
-  <div class="team">
-    <div class="members">
-      <div class="mem"><b>고유준</b><span>기획 · 사운드</span></div>
-      <div class="mem"><b>이유진</b><span>개발</span></div>
-      <div class="mem"><b>권유담</b><span>아트</span></div>
-    </div>
-    <dl class="facts">
-      <div><dt>학교</dt><dd>순천향대학교 메타버스&amp;게임학과</dd></div>
-      <div><dt>수상</dt><dd>미래게임잼 최우수상<br>2026 충청권 인디게임 공모전 인디유(indie·U) 대학부문 우수상</dd></div>
-      <div><dt>작품</dt><dd>OFF THE RECORD — 오프 더 레코드 (Unity, PC)</dd></div>
-      <div><dt>전시</dt><dd>지스타 2026 · 11월 19~22일 · 부산 벡스코</dd></div>
-    </dl>
+  <div class="head"><h2>삼유스튜디오</h2></div>
+  <div class="yu" role="img" aria-label="고유준, 이유진, 권유담. 세 이름 모두 가운데 글자가 유다."><span>고<b>유</b>준</span><span>이<b>유</b>진</span><span>권<b>유</b>담</span></div>
+  <div class="about">
+    <p>세 사람 이름에 '유'가 하나씩 들어 있다. 유가 셋이라 삼유스튜디오다.</p>
+    <p>충남 아산의 순천향대학교 메타버스&amp;게임학과 재학생 셋이 꾸린 팀이다. 기획·사운드, 개발, 아트를 한 명씩 맡아 외주 없이 만든다.</p>
   </div>
+  <div class="team">
+    <div>
+      <h3>팀원</h3>
+      <div class="members">
+        <div class="mem"><b>고유준</b><span>기획 · 사운드</span></div>
+        <div class="mem"><b>이유진</b><span>개발</span><a href="https://yeuljliyn.github.io/" target="_blank" rel="noopener">포트폴리오 ↗</a></div>
+        <div class="mem"><b>권유담</b><span>아트</span><a href="https://damswaroo.github.io/game-art-portfolio/" target="_blank" rel="noopener">포트폴리오 ↗</a></div>
+      </div>
+    </div>
+    <div>
+      <h3>걸어온 길</h3>
+      <ol class="path">
+        <li><time>2026. 9</time><div><b>미래게임잼 최우수상</b><span>이때 만든 프로토타입이 OFF THE RECORD의 출발이다.</span></div></li>
+        <li><time>2026. 11</time><div><b>인디유(indie·U) 대학부문 우수상</b><span>2026 충청권 인디게임 공모전</span></div></li>
+        <li><time>2026. 11</time><div><b>지스타 2026 시연</b><span>11월 19~22일, 부산 벡스코</span></div></li>
+      </ol>
+    </div>
+  </div>
+  <dl class="facts">
+    <div><dt>학교</dt><dd>순천향대학교 메타버스&amp;게임학과</dd></div>
+    <div><dt>작품</dt><dd>OFF THE RECORD — 오프 더 레코드 (Unity, PC)</dd></div>
+    <div><dt>지원</dt><dd>충남콘텐츠진흥원 · 순천향대학교</dd></div>
+  </dl>
 </div></section>
 
 <footer><div class="wrap"><img src="이미지/웹/로고.webp" width="760" height="270" alt="OFF THE RECORD" loading="lazy"><span class="lbl">삼유스튜디오 · 순천향대학교 메타버스&amp;게임학과</span></div></footer>
