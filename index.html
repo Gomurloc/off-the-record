@@ -198,19 +198,28 @@ kbd{font-family:inherit;font-weight:600;font-size:13px;color:var(--ink);backgrou
 .aria .txt{display:grid;gap:14px}
 .aria .radio{font-weight:700;font-size:21px;line-height:1.5;letter-spacing:-.015em;color:#fff;border-left:3px solid var(--mint);padding-left:16px}
 /* 팀 */
-.yu{display:flex;flex-wrap:wrap;gap:6px 28px;font-weight:700;font-size:clamp(30px,8.4vw,60px);line-height:1.2;letter-spacing:-.03em;color:#566070;margin-bottom:22px}
-.yu b{color:var(--ink);font-weight:800}
-.about{display:grid;gap:10px;margin-bottom:52px}
-.about p:first-child{color:var(--ink);font-size:19px;font-weight:600}
+/* 팀 구역부터는 흰 바탕, 명함과 같은 짜임 */
+.biz{background:#fff;color:#4B5058;--ink:#111;--mute:#7C8088;--line:rgba(0,0,0,.13)}
+.card{display:grid;gap:28px;margin-bottom:56px}
+.card h2{margin:0}
+.card h2 img{width:min(72vw,330px);height:auto}
+.names{list-style:none;margin-top:14px;font-size:19px;line-height:1.55;color:#6A6F77}
+.names b{color:var(--ink);font-weight:700}
+.what{display:grid;gap:10px;align-content:center;border-top:1px solid var(--line);padding-top:28px}
+.what .fp{font-size:15px;color:var(--mute)}
+.what strong{font-weight:500;font-size:clamp(26px,3.4vw,38px);line-height:1.15;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px}
+.what p:first-of-type{color:var(--ink);font-weight:600;font-size:18px}
+@media(min-width:860px){.card{grid-template-columns:auto 1fr;gap:0;align-items:center;margin-bottom:72px}.who{padding-right:72px}.what{border-top:0;border-left:1px solid var(--line);padding:28px 0 28px 72px}}
 .team{display:grid;gap:44px}
 @media(min-width:760px){.team{grid-template-columns:1fr 1fr;align-items:start;gap:56px}}
 .team h3{font-size:17px;font-weight:600;color:var(--mute);margin-bottom:12px}
 .members{display:grid;border-top:1px solid var(--line)}
 .mem{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
-.mem b{font-weight:700;font-size:20px;color:#fff;line-height:1.3}
+.mem b{font-weight:500;font-size:20px;color:#5A5F67;line-height:1.3}
+.mem b i{font-style:normal;font-weight:800;color:var(--ink)}
 .mem span{grid-column:1;font-size:15px;color:var(--mute)}
-.mem a{grid-column:2;grid-row:1/3;font-size:15px;font-weight:500;color:var(--ink);text-decoration:underline;text-decoration-color:rgba(230,223,200,.35);text-underline-offset:4px;padding:8px 0;white-space:nowrap}
-.mem a:hover{color:#fff;text-decoration-color:#fff}
+.mem a{grid-column:2;grid-row:1/3;font-size:15px;font-weight:500;color:var(--ink);text-decoration:underline;text-decoration-color:rgba(0,0,0,.3);text-underline-offset:4px;padding:8px 0;white-space:nowrap}
+.mem a:hover{text-decoration-color:#111}
 .path{list-style:none;border-top:1px solid var(--line)}
 .path li{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
 .path time{font-size:15px;color:var(--mute)}
@@ -220,10 +229,9 @@ kbd{font-family:inherit;font-weight:600;font-size:13px;color:var(--ink);backgrou
 .facts div{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
 .facts dt{font-size:15px;color:var(--mute)}
 .facts dd{color:var(--ink)}
-footer{padding:36px 0 60px;border-top:1px solid var(--line)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center}
-footer img{width:150px;height:auto}
-footer .lbl{font-weight:400}
+footer{background:#fff;color:#7C8088;padding:30px 0 56px;border-top:1px solid rgba(0,0,0,.13);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}
+footer img{width:112px;height:auto}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.live::before{animation:none}.door .up,.door .lo{transition:none}.plate.in .d i,.plate.in .d b{animation-duration:.01s;animation-delay:0s}}
 </style></head><body>
 <nav id="nav"><div class="wrap"><a class="brand" href="#top">OFF THE <b>RECORD</b></a><ul><li><a href="#play">플레이</a></li><li><a href="#live">생중계</a></li><li><a href="#ship">함선</a></li><li><a href="#world">세계</a></li><li><a href="#team">팀</a></li></ul></div></nav>
@@ -384,20 +392,26 @@ footer .lbl{font-weight:400}
   </div>
 </div></section>
 
-<section id="team"><div class="wrap">
-  <div class="head"><h2>삼유스튜디오</h2></div>
-  <div class="yu" role="img" aria-label="고유준, 이유진, 권유담. 세 이름 모두 가운데 글자가 유다."><span>고<b>유</b>준</span><span>이<b>유</b>진</span><span>권<b>유</b>담</span></div>
-  <div class="about">
-    <p>세 사람 이름에 '유'가 하나씩 들어 있다. 유가 셋이라 삼유스튜디오다.</p>
-    <p>충남 아산의 순천향대학교 메타버스&amp;게임학과 재학생 셋이 꾸린 팀이다. 기획·사운드, 개발, 아트를 한 명씩 맡아 외주 없이 만든다.</p>
+<section id="team" class="biz"><div class="wrap">
+  <div class="card">
+    <div class="who">
+      <h2><img src="이미지/웹/3u_studio.svg" width="3545" height="653" alt="3U Studio, 삼유스튜디오" loading="lazy"></h2>
+      <ul class="names"><li><b>U</b> Jun Ko</li><li><b>U</b> Jin Lee</li><li><b>U</b> Dam Kwon</li></ul>
+    </div>
+    <div class="what">
+      <span class="fp">Featured project</span>
+      <strong>OFF THE RECORD</strong>
+      <p>세 사람 이름에 '유'가 하나씩 들어 있다. 유가 셋이라 삼유스튜디오다.</p>
+      <p>충남 아산의 순천향대학교 메타버스&amp;게임학과 재학생 셋이 꾸린 팀이다. 기획·사운드, 개발, 아트를 한 명씩 맡아 외주 없이 만든다.</p>
+    </div>
   </div>
   <div class="team">
     <div>
       <h3>팀원</h3>
       <div class="members">
-        <div class="mem"><b>고유준</b><span>기획 · 사운드</span></div>
-        <div class="mem"><b>이유진</b><span>개발</span><a href="https://yeuljliyn.github.io/" target="_blank" rel="noopener">포트폴리오 ↗</a></div>
-        <div class="mem"><b>권유담</b><span>아트</span><a href="https://damswaroo.github.io/game-art-portfolio/" target="_blank" rel="noopener">포트폴리오 ↗</a></div>
+        <div class="mem"><b>고<i>유</i>준</b><span>기획 · 사운드</span></div>
+        <div class="mem"><b>이<i>유</i>진</b><span>개발</span><a href="https://yeuljliyn.github.io/" target="_blank" rel="noopener">포트폴리오 ↗</a></div>
+        <div class="mem"><b>권<i>유</i>담</b><span>아트</span><a href="https://damswaroo.github.io/game-art-portfolio/" target="_blank" rel="noopener">포트폴리오 ↗</a></div>
       </div>
     </div>
     <div>
@@ -416,7 +430,7 @@ footer .lbl{font-weight:400}
   </dl>
 </div></section>
 
-<footer><div class="wrap"><img src="이미지/웹/로고.webp" width="760" height="270" alt="OFF THE RECORD" loading="lazy"><span class="lbl">삼유스튜디오 · 순천향대학교 메타버스&amp;게임학과</span></div></footer>
+<footer><div class="wrap"><img src="이미지/웹/3u_studio.svg" width="3545" height="653" alt="3U Studio" loading="lazy"><span>삼유스튜디오 · 순천향대학교 메타버스&amp;게임학과</span></div></footer>
 <script>
 const n=document.getElementById('nav');addEventListener('scroll',()=>n.classList.toggle('solid',scrollY>40),{passive:true});
 const rv=document.querySelectorAll('[data-rv]');
