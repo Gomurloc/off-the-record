@@ -3,6 +3,7 @@
 삼유스튜디오(순천향대학교 메타버스&게임학과)의 게임 OFF THE RECORD 소개 페이지. 홍보물 QR이 여는 곳.
 
 - 주소: https://gomurloc.github.io/off-the-record/ (`이미지/QR_팀소개.png`가 가리키는 주소. `main`에 합치면 반영된다)
+- itch.io 시연판: https://gomurloc.itch.io/off-the-record (2026-11-18 올림, 개발 중. 올린 빌드는 2026-11-17 부스 빌드). 페이지 끝쪽 "받기" 구역(`#get`)에 단추와 QR이 있다. `이미지/QR_itch.png`·`.svg`가 이 주소를 가리키고, `QR_itch_인쇄용.png`는 인쇄용 큰 판이다.
 - 이 저장소는 `index.html`과 그림만 둔다. 페이지는 여기서 고친다.
 - 내용의 기준은 유니티 저장소(`unity-scrap-to-stars`, `claude/demo-sprint` 브랜치)의 `docs/design.md`다. 2026-11-10에 그 판(2026-11-06 기능 동결) 기준으로 다시 만들었다.
 - 그림은 같은 저장소 `Assets/_Game/Art`에서 웹용으로 줄여 `이미지/웹/`에 둔다. `로고.webp`는 `Title/title_main.png`에서 글자만 따낸 것이다.
